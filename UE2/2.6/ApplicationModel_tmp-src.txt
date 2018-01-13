@@ -1,0 +1,20 @@
+# Real Sequencediagram
+Hello ->
+Hello <-
+
+Check Kartendaten ->
+01 Valid <-
+
+Pin <pin> ->
+02 Succeed <-
+
+Get Balance ->
+03 1500,25 EUR <-
+Withdraw possible 500 ->
+
+04 Covered <-
+Withdraw 500 ->
+
+05 Done <-
+Bye ->
+Closed <-
