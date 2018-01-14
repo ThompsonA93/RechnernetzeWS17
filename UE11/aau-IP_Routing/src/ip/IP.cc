@@ -50,10 +50,17 @@ void IP::handleMessage(cMessage *msg) {
 
 	    // 1.: Use IPControlInfo to create IPDatagram
 	    IPControlInfo* ici = check_and_cast<IPControlInfo*>(msg->getControlInfo());
-
 	    IPDatagram* id = new IPDatagram;
+	    id->setDestIP(ici->getDestIP());
+	    id->setSrcIP(ici->getSrcIP());
+	    id->setProtocol(ici->getProtocol());
+	    EV << "IP::handleMessage -- Created IPDatagram, sending to Router" << std::endl;
 
-
+	    // 1.1 Encapsulate data
+	    id->encapsulate((cPacket*)msg);
+	    id->setControlInfo(ici);
+	    // 2.: Send to Network -- FIXME::What the f* is the correct gate?
+ 	    send(id, "outLowerLayer", 0);     // Not outLowerLayer, Not outLowerLayer[0]
 	}
 
 	else if (msg->arrivedOn("inLowerLayer")) {
@@ -61,21 +68,38 @@ void IP::handleMessage(cMessage *msg) {
 		if (isRouter == 1) {
 			// This is a router and we have to forward the datagram
 
-			// TODO:
+		    // FIXME
 			// * Find out the destination network
 			//   (IP address which ends with '.0', use IPAddress->getNetwork().str())
-			// * Find out which gate is the right one
-			//   use the forwarding table 'forwardingtable' initialized above
-			// * Send the datagram to the appropriate gate.
+		    IPControlInfo* ici = check_and_cast<IPControlInfo*>(msg->getControlInfo());
+		    EV << "DestIP: " << ici->getDestIP() << "\tSrcIP: " << ici->getSrcIP() << "\tProt: "<< ici->getProtocol() << std::endl;
+
+		    // FIXME FIXME FIXME FIXME FIXME FIXME
+		    // * Find out which gate is the right one
+		    //   use the forwarding table 'forwardingtable' initialized above
+		    // TODO
+
+
+		    //if(ici->getDestIP() /*== */)
+		    //send(msg, "outLowerLayer", 0);      // 0 Is to the respective client
+
+		    // * Send the datagram to the appropriate gate.
+
 
 		} else {
 			// we are a host and not a router, so we have to hand it over to the next higher level.
 
-			// TODO
+			// FIXME
 			// * Create ControlInfo for upper layer ... application layer needs the data.
-			// * Decapsulate message
-			// * send to upper layer
+		    IPControlInfo* ici = check_and_cast<IPControlInfo*>(msg->removeControlInfo());
+
+		    // * Decapsulate message
+		    IPDatagram* id = check_and_cast<IPDatagram*>(msg);
+		    cPacket* cp = id->decapsulate();
+
+		    // * send to upper layer
+		    cp->setControlInfo(ici);
+		    send(cp, "outUpperLayer", 0);
 		}
 	}
-
 }

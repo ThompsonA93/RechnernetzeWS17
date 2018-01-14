@@ -1,6 +1,6 @@
 ../out/gcc-debug/src/tcp/TCPControlInfo_m.o: tcp/TCPControlInfo_m.cc \
  tcp/TCPControlInfo_m.h \
- /home/thompson/Uni/IDEs/omnetpp-5.2/include/omnetpp.h \
+ /home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h \
  tcp/../3rdParty/IPv4Address.h tcp/../3rdParty/INETDefs.h \
  tcp/../3rdParty/precompiled_debug.h tcp/../3rdParty/precompiled.h \
  tcp/../3rdParty/opp_defines.h tcp/../3rdParty/features.h \
@@ -9,7 +9,7 @@
 
 tcp/TCPControlInfo_m.h:
 
-/home/thompson/Uni/IDEs/omnetpp-5.2/include/omnetpp.h:
+/home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h:
 
 tcp/../3rdParty/IPv4Address.h:
 
