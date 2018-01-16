@@ -27,18 +27,16 @@
  * <pre>
  * packet IPDatagram
  * {
- *     inet::IPv4Address destIP;
  *     inet::IPv4Address srcIP;
- *     short protocol;
+ *     inet::IPv4Address destIP;
  * }
  * </pre>
  */
 class IPDatagram : public ::omnetpp::cPacket
 {
   protected:
-    inet::IPv4Address destIP;
     inet::IPv4Address srcIP;
-    short protocol;
+    inet::IPv4Address destIP;
 
   private:
     void copy(const IPDatagram& other);
@@ -57,14 +55,12 @@ class IPDatagram : public ::omnetpp::cPacket
     virtual void parsimUnpack(omnetpp::cCommBuffer *b) override;
 
     // field getter/setter methods
-    virtual inet::IPv4Address& getDestIP();
-    virtual const inet::IPv4Address& getDestIP() const {return const_cast<IPDatagram*>(this)->getDestIP();}
-    virtual void setDestIP(const inet::IPv4Address& destIP);
     virtual inet::IPv4Address& getSrcIP();
     virtual const inet::IPv4Address& getSrcIP() const {return const_cast<IPDatagram*>(this)->getSrcIP();}
     virtual void setSrcIP(const inet::IPv4Address& srcIP);
-    virtual short getProtocol() const;
-    virtual void setProtocol(short protocol);
+    virtual inet::IPv4Address& getDestIP();
+    virtual const inet::IPv4Address& getDestIP() const {return const_cast<IPDatagram*>(this)->getDestIP();}
+    virtual void setDestIP(const inet::IPv4Address& destIP);
 };
 
 inline void doParsimPacking(omnetpp::cCommBuffer *b, const IPDatagram& obj) {obj.parsimPack(b);}

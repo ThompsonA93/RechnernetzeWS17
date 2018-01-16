@@ -25,7 +25,8 @@ class noncobject inet::IPv4Address;
 
 packet IPDatagram
 {
-    inet::IPv4Address destIP;
-    inet::IPv4Address srcIP;
-    short protocol;
+	// TODO: Add fields here ...
+	
+	inet::IPv4Address srcIP;
+	inet::IPv4Address destIP;
 }

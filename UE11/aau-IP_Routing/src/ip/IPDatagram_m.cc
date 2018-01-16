@@ -181,7 +181,6 @@ Register_Class(IPDatagram)
 
 IPDatagram::IPDatagram(const char *name, short kind) : ::omnetpp::cPacket(name,kind)
 {
-    this->protocol = 0;
 }
 
 IPDatagram::IPDatagram(const IPDatagram& other) : ::omnetpp::cPacket(other)
@@ -203,35 +202,22 @@ IPDatagram& IPDatagram::operator=(const IPDatagram& other)
 
 void IPDatagram::copy(const IPDatagram& other)
 {
-    this->destIP = other.destIP;
     this->srcIP = other.srcIP;
-    this->protocol = other.protocol;
+    this->destIP = other.destIP;
 }
 
 void IPDatagram::parsimPack(omnetpp::cCommBuffer *b) const
 {
     ::omnetpp::cPacket::parsimPack(b);
-    doParsimPacking(b,this->destIP);
     doParsimPacking(b,this->srcIP);
-    doParsimPacking(b,this->protocol);
+    doParsimPacking(b,this->destIP);
 }
 
 void IPDatagram::parsimUnpack(omnetpp::cCommBuffer *b)
 {
     ::omnetpp::cPacket::parsimUnpack(b);
-    doParsimUnpacking(b,this->destIP);
     doParsimUnpacking(b,this->srcIP);
-    doParsimUnpacking(b,this->protocol);
-}
-
-inet::IPv4Address& IPDatagram::getDestIP()
-{
-    return this->destIP;
-}
-
-void IPDatagram::setDestIP(const inet::IPv4Address& destIP)
-{
-    this->destIP = destIP;
+    doParsimUnpacking(b,this->destIP);
 }
 
 inet::IPv4Address& IPDatagram::getSrcIP()
@@ -244,14 +230,14 @@ void IPDatagram::setSrcIP(const inet::IPv4Address& srcIP)
     this->srcIP = srcIP;
 }
 
-short IPDatagram::getProtocol() const
+inet::IPv4Address& IPDatagram::getDestIP()
 {
-    return this->protocol;
+    return this->destIP;
 }
 
-void IPDatagram::setProtocol(short protocol)
+void IPDatagram::setDestIP(const inet::IPv4Address& destIP)
 {
-    this->protocol = protocol;
+    this->destIP = destIP;
 }
 
 class IPDatagramDescriptor : public omnetpp::cClassDescriptor
@@ -319,7 +305,7 @@ const char *IPDatagramDescriptor::getProperty(const char *propertyname) const
 int IPDatagramDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
-    return basedesc ? 3+basedesc->getFieldCount() : 3;
+    return basedesc ? 2+basedesc->getFieldCount() : 2;
 }
 
 unsigned int IPDatagramDescriptor::getFieldTypeFlags(int field) const
@@ -333,9 +319,8 @@ unsigned int IPDatagramDescriptor::getFieldTypeFlags(int field) const
     static unsigned int fieldTypeFlags[] = {
         FD_ISCOMPOUND,
         FD_ISCOMPOUND,
-        FD_ISEDITABLE,
     };
-    return (field>=0 && field<3) ? fieldTypeFlags[field] : 0;
+    return (field>=0 && field<2) ? fieldTypeFlags[field] : 0;
 }
 
 const char *IPDatagramDescriptor::getFieldName(int field) const
@@ -347,20 +332,18 @@ const char *IPDatagramDescriptor::getFieldName(int field) const
         field -= basedesc->getFieldCount();
     }
     static const char *fieldNames[] = {
-        "destIP",
         "srcIP",
-        "protocol",
+        "destIP",
     };
-    return (field>=0 && field<3) ? fieldNames[field] : nullptr;
+    return (field>=0 && field<2) ? fieldNames[field] : nullptr;
 }
 
 int IPDatagramDescriptor::findField(const char *fieldName) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount() : 0;
-    if (fieldName[0]=='d' && strcmp(fieldName, "destIP")==0) return base+0;
-    if (fieldName[0]=='s' && strcmp(fieldName, "srcIP")==0) return base+1;
-    if (fieldName[0]=='p' && strcmp(fieldName, "protocol")==0) return base+2;
+    if (fieldName[0]=='s' && strcmp(fieldName, "srcIP")==0) return base+0;
+    if (fieldName[0]=='d' && strcmp(fieldName, "destIP")==0) return base+1;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
@@ -375,9 +358,8 @@ const char *IPDatagramDescriptor::getFieldTypeString(int field) const
     static const char *fieldTypeStrings[] = {
         "inet::IPv4Address",
         "inet::IPv4Address",
-        "short",
     };
-    return (field>=0 && field<3) ? fieldTypeStrings[field] : nullptr;
+    return (field>=0 && field<2) ? fieldTypeStrings[field] : nullptr;
 }
 
 const char **IPDatagramDescriptor::getFieldPropertyNames(int field) const
@@ -444,9 +426,8 @@ std::string IPDatagramDescriptor::getFieldValueAsString(void *object, int field,
     }
     IPDatagram *pp = (IPDatagram *)object; (void)pp;
     switch (field) {
-        case 0: {std::stringstream out; out << pp->getDestIP(); return out.str();}
-        case 1: {std::stringstream out; out << pp->getSrcIP(); return out.str();}
-        case 2: return long2string(pp->getProtocol());
+        case 0: {std::stringstream out; out << pp->getSrcIP(); return out.str();}
+        case 1: {std::stringstream out; out << pp->getDestIP(); return out.str();}
         default: return "";
     }
 }
@@ -461,7 +442,6 @@ bool IPDatagramDescriptor::setFieldValueAsString(void *object, int field, int i,
     }
     IPDatagram *pp = (IPDatagram *)object; (void)pp;
     switch (field) {
-        case 2: pp->setProtocol(string2long(value)); return true;
         default: return false;
     }
 }
@@ -491,8 +471,8 @@ void *IPDatagramDescriptor::getFieldStructValuePointer(void *object, int field, 
     }
     IPDatagram *pp = (IPDatagram *)object; (void)pp;
     switch (field) {
-        case 0: return (void *)(&pp->getDestIP()); break;
-        case 1: return (void *)(&pp->getSrcIP()); break;
+        case 0: return (void *)(&pp->getSrcIP()); break;
+        case 1: return (void *)(&pp->getDestIP()); break;
         default: return nullptr;
     }
 }

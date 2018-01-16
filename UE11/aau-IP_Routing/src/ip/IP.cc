@@ -18,6 +18,8 @@
 // 621.800 (17W) Computer Networks and Network Programming
 
 #include "IP.h"
+#include "../udp/UDPSegment_m.h"
+#include "IPDatagram_m.h"
 
 Define_Module(IP);
 
@@ -48,58 +50,57 @@ void IP::handleMessage(cMessage *msg) {
 		// * Use IPControlInfo to create IPDatagram
 		// * send to network
 
-	    // 1.: Use IPControlInfo to create IPDatagram
-	    IPControlInfo* ici = check_and_cast<IPControlInfo*>(msg->getControlInfo());
-	    IPDatagram* id = new IPDatagram;
-	    id->setDestIP(ici->getDestIP());
-	    id->setSrcIP(ici->getSrcIP());
-	    id->setProtocol(ici->getProtocol());
-	    EV << "IP::handleMessage -- Created IPDatagram, sending to Router" << std::endl;
+	    UDPSegment *seg = check_and_cast<UDPSegment *>(msg);
+	    IPControlInfo *info = check_and_cast<IPControlInfo *>(seg->removeControlInfo());
 
-	    // 1.1 Encapsulate data
-	    id->encapsulate((cPacket*)msg);
-	    id->setControlInfo(ici);
-	    // 2.: Send to Network -- FIXME::What the f* is the correct gate?
- 	    send(id, "outLowerLayer", 0);     // Not outLowerLayer, Not outLowerLayer[0]
+	    IPDatagram *datagram = new IPDatagram;
+	     datagram->setSrcIP(info->getSrcIP());
+	     datagram->setDestIP(info->getDestIP());
+	     datagram->encapsulate(seg);
+
+	     send(datagram,"outLowerLayer", 0);
 	}
 
 	else if (msg->arrivedOn("inLowerLayer")) {
 		//message comes from the network:
+
+	    IPDatagram *ipData = check_and_cast<IPDatagram*>(msg);
+
 		if (isRouter == 1) {
 			// This is a router and we have to forward the datagram
 
-		    // FIXME
+			// TODO:
 			// * Find out the destination network
 			//   (IP address which ends with '.0', use IPAddress->getNetwork().str())
-		    IPControlInfo* ici = check_and_cast<IPControlInfo*>(msg->getControlInfo());
-		    EV << "DestIP: " << ici->getDestIP() << "\tSrcIP: " << ici->getSrcIP() << "\tProt: "<< ici->getProtocol() << std::endl;
-
-		    // FIXME FIXME FIXME FIXME FIXME FIXME
-		    // * Find out which gate is the right one
-		    //   use the forwarding table 'forwardingtable' initialized above
-		    // TODO
+			// * Find out which gate is the right one
+			//   use the forwarding table 'forwardingtable' initialized above
+			// * Send the datagram to the appropriate gate.
 
 
-		    //if(ici->getDestIP() /*== */)
-		    //send(msg, "outLowerLayer", 0);      // 0 Is to the respective client
+		    string destNet = ipData->getDestIP().getNetwork().str();
+		    int rightGate = this->forwardingtable[destNet];
 
-		    // * Send the datagram to the appropriate gate.
-
+		    send(ipData, "outLowerLayer", rightGate);
 
 		} else {
 			// we are a host and not a router, so we have to hand it over to the next higher level.
 
-			// FIXME
+			// TODO
 			// * Create ControlInfo for upper layer ... application layer needs the data.
-		    IPControlInfo* ici = check_and_cast<IPControlInfo*>(msg->removeControlInfo());
+			// * Decapsulate message
+			// * send to upper layer
 
-		    // * Decapsulate message
-		    IPDatagram* id = check_and_cast<IPDatagram*>(msg);
-		    cPacket* cp = id->decapsulate();
+		    IPControlInfo *ipcInfo = new IPControlInfo;
+		    cPacket *currentSeg = new cPacket;
 
-		    // * send to upper layer
-		    cp->setControlInfo(ici);
-		    send(cp, "outUpperLayer", 0);
+		    //set controllinfo data
+		    ipcInfo->setSrcIP(ipData->getSrcIP());
+		    ipcInfo->setDestIP(ipData->getDestIP());
+
+		    currentSeg = ipData->decapsulate();
+		    currentSeg->setControlInfo(ipcInfo);
+
+		    send(ipData, "outUpperLayer", 0);
 		}
 	}
 }
