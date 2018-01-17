@@ -1,12 +1,13 @@
 #include "CSMA.h"
+#include "CSMAFrame_m.h"
 
 Define_Module(CSMA);
 
 void CSMA::initialize()
 {
-    this->backoffTimeout = NULL;
-    this->rtsTimeout = NULL;
-    this->colTimeout = NULL;
+    this->backoffTimeout = NULL;    // SIFS*FACTOR
+    this->rtsTimeout = NULL;        // DIFS
+    this->colTimeout = NULL;        // SIFS
     this->maxBackoff = 6.0;
     this->SIFS = 1.0;
     this->DIFS = 3.0;
@@ -39,12 +40,17 @@ void CSMA::handleSelfMessage(cMessage *msg){
     if (msg == backoffTimeout) {
         // TODO:
         // Retransmit RTS after backoff.
+        CSMAFrame* cf = new CSMAFrame;
+        send(cf, "outUpperLayer");
         // Schedule another timeout for expected response to RTS.
+
+        this->maxBackoff = 6.0;
         // Reset handled timeout
 
     } else if (msg == rtsTimeout) {
         // TODO:
         // Create random backoff before trying to re-send an RTS.
+        DIFS = rand() % 30;
         // Reset handled timeout
 
     } else if(msg == colTimeout){
@@ -58,6 +64,25 @@ void CSMA::handleSelfMessage(cMessage *msg){
 void CSMA::handleUpperLayerMessage(cMessage *msg)
 {
     // TODO
+    // Send new RTS
+    CSMAFrame* f = new CSMAFrame;
+
+    f->setType(RTS); //FIXME boiiiiiiiii iii iiiiiiiii
+    f->setResDuration(0);
+    f->setSrc(*srcMAC);
+    f->setDest(*destMAC);
+    sendToAllReachableDevices(f);
+
+    // Save msg
+    CSMAFrame* csmaF = new CSMAFrame;
+    csmaF->setType(DATA);
+    csmaF->setResDuration(0);
+    csmaF->setSrc(*srcMAC);
+    csmaF->setDest(*destMAC);
+    // TODO & ADD ?? CSMAControlInfo
+    csmaF->encapsulate((cPacket*)msg);
+
+    msgBuffer.push_back(csmaF);
 }
 
 void CSMA::handleLowerLayerMessage(cMessage *msg)
