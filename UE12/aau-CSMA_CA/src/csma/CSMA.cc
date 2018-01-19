@@ -1,5 +1,7 @@
 #include "CSMA.h"
 #include "CSMAFrame_m.h"
+#include "CSMAControlInfo_m.h"
+#include "../ip/IPDatagram_m.h"
 
 Define_Module(CSMA);
 
@@ -40,17 +42,35 @@ void CSMA::handleSelfMessage(cMessage *msg){
     if (msg == backoffTimeout) {
         // TODO:
         // Retransmit RTS after backoff.
-        CSMAFrame* cf = new CSMAFrame;
-        send(cf, "outUpperLayer");
-        // Schedule another timeout for expected response to RTS.
 
-        this->maxBackoff = 6.0;
-        // Reset handled timeout
+        if (msgBuffer.empty()) {
+
+            CSMAFrame* rtsFrame = new CSMAFrame;
+
+            rtsFrame->setSrc(msgBuffer.front()->getSrc());
+            rtsFrame->setDest(msgBuffer.front()->getDest());
+            rtsFrame->setType(RTS);
+
+            sendToAllReachableDevices(rtsFrame);
+
+            // Schedule another timeout for expected response to RTS.
+
+            if (!rtsTimeout->isScheduled()) {
+                scheduleAt(simTime() + DIFS, rtsTimeout);
+
+            }
+            // Reset handled timeout
+
+        }
 
     } else if (msg == rtsTimeout) {
         // TODO:
         // Create random backoff before trying to re-send an RTS.
-        DIFS = rand() % 30;
+        simtime_t delay = SIFS * (rand() % 10);
+
+        if (!backoffTimeout->isScheduled()) {
+            scheduleAt(simTime() + delay, backoffTimeout);
+        }
         // Reset handled timeout
 
     } else if(msg == colTimeout){
@@ -58,31 +78,69 @@ void CSMA::handleSelfMessage(cMessage *msg){
         // Check if more than one msg arrived during the timeout.
         // If so, it's a collision -> Delete messages and reset counter.
         // Reset handled timeout
+
+
+        if (numOfConcurrentMsgs > 1) {
+
+            msgBuffer.clear();
+            numOfConcurrentMsgs = 0;
+
+        }
+        else if (numOfConcurrentMsgs == 1) {
+
+            CSMAFrame *ctsFrame = new CSMAFrame;
+
+            ctsFrame->setSrc(*srcMAC);
+            ctsFrame->setDest(msgBuffer.front()->getDest());
+            ctsFrame->setType(CTS);
+
+            sendToAllReachableDevices(ctsFrame);
+
+            msgBuffer.clear();
+            numOfConcurrentMsgs = 0;
+        }
     }
 }
 
 void CSMA::handleUpperLayerMessage(cMessage *msg)
 {
     // TODO
-    // Send new RTS
-    CSMAFrame* f = new CSMAFrame;
 
-    f->setType(RTS); //FIXME boiiiiiiiii iii iiiiiiiii
-    f->setResDuration(0);
-    f->setSrc(*srcMAC);
-    f->setDest(*destMAC);
-    sendToAllReachableDevices(f);
+    //get control info from received upper layer datagram
 
-    // Save msg
-    CSMAFrame* csmaF = new CSMAFrame;
-    csmaF->setType(DATA);
-    csmaF->setResDuration(0);
-    csmaF->setSrc(*srcMAC);
-    csmaF->setDest(*destMAC);
-    // TODO & ADD ?? CSMAControlInfo
-    csmaF->encapsulate((cPacket*)msg);
+    IPDatagram *ipData = check_and_cast<IPDatagram*>(msg);
+    CSMAControlInfo *cInfo = check_and_cast<CSMAControlInfo*>(ipData->removeControlInfo());
 
-    msgBuffer.push_back(csmaF);
+
+    //create CSMAFrame
+    CSMAFrame *dataFrame = new CSMAFrame;
+    dataFrame->setSrc(cInfo->getSrc());
+    dataFrame->setDest(cInfo->getDest());
+    dataFrame->setType(DATA);
+    dataFrame->encapsulate(ipData);
+
+
+    // send RTS if there is no older frame waiting / nobody else has
+    // sent an RTS -> REQUEST TO SEND
+
+    if (msgBuffer.empty() && !backoffTimeout->isScheduled()) {
+
+        CSMAFrame *rts = new CSMAFrame;
+
+        rts->setSrc(cInfo->getSrc());
+        rts->setDest(cInfo->getDest());
+        rts->setType(RTS);
+
+        sendToAllReachableDevices(rts);
+
+
+        if (!rtsTimeout->isScheduled()) {
+
+            scheduleAt(simTime() + DIFS, rtsTimeout);
+        }
+    }
+
+    msgBuffer.push_back(dataFrame);
 }
 
 void CSMA::handleLowerLayerMessage(cMessage *msg)
@@ -106,20 +164,66 @@ void CSMA::handleMessageForMe(CSMAFrame *frame)
         case RTS: {
             // TODO
 
+            numOfConcurrentMsgs++;
+
+            msgBuffer.push_back(frame);
+
+            if (!colTimeout->isScheduled()) {
+                EV << name << ": collision timeout started\n";
+
+                scheduleAt(simTime() + SIFS, colTimeout);
+            }
+
             break;
         }
         case CTS: {
             // TODO
 
+            // check if we are still waiting for CTS and
+            // if its so, cancel the timeout and send data.
+            if (rtsTimeout->isScheduled()) {
+
+                cancelEvent(rtsTimeout);
+                sendToAllReachableDevices(msgBuffer.front());
+
+            }
             break;
         }
         case DATA: {
             // TODO
+            // received data frame -> now send ack frame to
+            // source of data.
+
+            EV << name << ": DATA receviced -> send ACK\n";
+            CSMAFrame *ackFrame = CSMAFrame;
+
+            ackFrame->setSrc(*srcMAC);
+            ackFrame->setDest(frame->getSrc());
+            ackFrame->setType(ACK);
+
+            sendToAllReachableDevices(ackFrame);
 
             break;
         }
         case ACK: {
             // TODO
+
+            EV << name << ": ACK received !!\n";
+
+            // receiver got data -> delet it from buffer
+            msgBuffer.pop_front();
+
+            //check if there are still messages waiting.
+
+            if (!msgBuffer.empty()) {
+
+                CSMAFrame *rts = new CSMAFrame;
+                rts->setSrc(msgBuffer.front()->getSrc());
+                rts->setDest(msgBuffer.front()->getDest());
+                rts->setType(RTS);
+
+                sendToAllReachableDevices(rts);
+            }
 
             break;
         }
@@ -135,11 +239,22 @@ void CSMA::handleMessageForOthers(CSMAFrame *frame)
         case RTS: {
             // TODO
 
+            if (!backoffTimeout->isScheduled()) {
+
+               scheduleAt(simTime() + (SIFS * (rand() % 10)), backoffTimeout);
+
+            }
             break;
         }
         case CTS: {
             // TODO
 
+            if (backoffTimeout->isScheduled()) {
+
+                cancelEvent(backoffTimeout));
+
+                scheduleAt(simTime() + frame->getResDuration(), backoffTimeout);
+            }
             break;
         }
         case DATA: {
