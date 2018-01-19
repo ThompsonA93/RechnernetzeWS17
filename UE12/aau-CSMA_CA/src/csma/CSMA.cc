@@ -7,9 +7,9 @@ Define_Module(CSMA);
 
 void CSMA::initialize()
 {
-    this->backoffTimeout = NULL;    // SIFS*FACTOR
-    this->rtsTimeout = NULL;        // DIFS
-    this->colTimeout = NULL;        // SIFS
+    this->backoffTimeout = new cMessage;    // SIFS*FACTOR
+    this->rtsTimeout = new cMessage;        // DIFS
+    this->colTimeout = new cMessage;        // SIFS
     this->maxBackoff = 6.0;
     this->SIFS = 1.0;
     this->DIFS = 3.0;
@@ -17,6 +17,7 @@ void CSMA::initialize()
     this->numOfConcurrentMsgs = 0;
     this->srcMAC = new MACAddress(getParentModule()->par("macAddress").stringValue());
     this->destMAC = new MACAddress(getParentModule()->par("receiverMac").stringValue());
+
 
     findAndSetReachableDevices();
 }
@@ -43,7 +44,7 @@ void CSMA::handleSelfMessage(cMessage *msg){
         // TODO:
         // Retransmit RTS after backoff.
 
-        if (msgBuffer.empty()) {
+        if (!msgBuffer.empty()) {
 
             CSMAFrame* rtsFrame = new CSMAFrame;
 
@@ -169,7 +170,7 @@ void CSMA::handleMessageForMe(CSMAFrame *frame)
             msgBuffer.push_back(frame);
 
             if (!colTimeout->isScheduled()) {
-                EV << name << ": collision timeout started\n";
+                EV << ": collision timeout started\n";
 
                 scheduleAt(simTime() + SIFS, colTimeout);
             }
@@ -194,8 +195,8 @@ void CSMA::handleMessageForMe(CSMAFrame *frame)
             // received data frame -> now send ack frame to
             // source of data.
 
-            EV << name << ": DATA receviced -> send ACK\n";
-            CSMAFrame *ackFrame = CSMAFrame;
+            EV << ": DATA receviced -> send ACK\n";
+            CSMAFrame *ackFrame = new CSMAFrame;
 
             ackFrame->setSrc(*srcMAC);
             ackFrame->setDest(frame->getSrc());
@@ -208,7 +209,7 @@ void CSMA::handleMessageForMe(CSMAFrame *frame)
         case ACK: {
             // TODO
 
-            EV << name << ": ACK received !!\n";
+            EV << ": ACK received !!\n";
 
             // receiver got data -> delet it from buffer
             msgBuffer.pop_front();
@@ -241,7 +242,9 @@ void CSMA::handleMessageForOthers(CSMAFrame *frame)
 
             if (!backoffTimeout->isScheduled()) {
 
-               scheduleAt(simTime() + (SIFS * (rand() % 10)), backoffTimeout);
+                simtime_t delay = (SIFS * (rand() % 6) + 1);
+
+               scheduleAt(simTime() + delay, backoffTimeout);
 
             }
             break;
@@ -251,7 +254,7 @@ void CSMA::handleMessageForOthers(CSMAFrame *frame)
 
             if (backoffTimeout->isScheduled()) {
 
-                cancelEvent(backoffTimeout));
+                cancelEvent(backoffTimeout);
 
                 scheduleAt(simTime() + frame->getResDuration(), backoffTimeout);
             }
