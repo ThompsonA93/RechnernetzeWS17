@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Scanner;
 
 /** Main of UE1. Execute & do via Terminal **/
