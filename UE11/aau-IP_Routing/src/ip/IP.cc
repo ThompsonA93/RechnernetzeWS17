@@ -58,6 +58,7 @@ void IP::handleMessage(cMessage *msg) {
 	     datagram->setDestIP(info->getDestIP());
 	     datagram->encapsulate(seg);
 
+	     delete info;
 	     send(datagram,"outLowerLayer", 0);
 	}
 
@@ -76,10 +77,8 @@ void IP::handleMessage(cMessage *msg) {
 			//   use the forwarding table 'forwardingtable' initialized above
 			// * Send the datagram to the appropriate gate.
 
-
 		    string destNet = ipData->getDestIP().getNetwork().str();
 		    int rightGate = this->forwardingtable[destNet];
-
 		    send(ipData, "outLowerLayer", rightGate);
 
 		} else {

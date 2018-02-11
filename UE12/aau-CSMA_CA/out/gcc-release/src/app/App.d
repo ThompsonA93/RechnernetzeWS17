@@ -1,5 +1,5 @@
 ../out/gcc-release/src/app/App.o: app/App.cc app/App.h \
- /home/muhamed/bin/omnetpp-5.2/include/omnetpp.h \
+ /home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h \
  app/../udp/UDPControlInfo_m.h app/../udp/../3rdParty/IPv4Address.h \
  app/../udp/../3rdParty/INETDefs.h \
  app/../udp/../3rdParty/precompiled_release.h \
@@ -10,7 +10,7 @@
 
 app/App.h:
 
-/home/muhamed/bin/omnetpp-5.2/include/omnetpp.h:
+/home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h:
 
 app/../udp/UDPControlInfo_m.h:
 

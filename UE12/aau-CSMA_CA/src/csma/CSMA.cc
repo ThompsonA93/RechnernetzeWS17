@@ -1,15 +1,13 @@
 #include "CSMA.h"
-#include "CSMAFrame_m.h"
-#include "CSMAControlInfo_m.h"
 #include "../ip/IPDatagram_m.h"
 
 Define_Module(CSMA);
 
 void CSMA::initialize()
 {
-    this->backoffTimeout = new cMessage;    // SIFS*FACTOR
-    this->rtsTimeout = new cMessage;        // DIFS
-    this->colTimeout = new cMessage;        // SIFS
+    this->backoffTimeout = NULL;
+    this->rtsTimeout = NULL;
+    this->colTimeout = NULL;
     this->maxBackoff = 6.0;
     this->SIFS = 1.0;
     this->DIFS = 3.0;
@@ -18,8 +16,15 @@ void CSMA::initialize()
     this->srcMAC = new MACAddress(getParentModule()->par("macAddress").stringValue());
     this->destMAC = new MACAddress(getParentModule()->par("receiverMac").stringValue());
 
-
     findAndSetReachableDevices();
+
+    this->finished = false;
+    this->new_data = false;
+    this->transmitData = NULL;
+    this->ctsTimeout = NULL;
+
+    // seed random numbers
+    srand(time(0));
 }
 
 void CSMA::handleMessage(cMessage *msg)
@@ -41,65 +46,93 @@ void CSMA::handleMessage(cMessage *msg)
 void CSMA::handleSelfMessage(cMessage *msg){
 
     if (msg == backoffTimeout) {
+        EV << "backoff timer expired, resend RTS" << endl;
+
         // TODO:
         // Retransmit RTS after backoff.
+        // Schedule another timeout for expected response to RTS.
+        // Reset handled timeout
 
-        if (!msgBuffer.empty()) {
+        // prepare & (re)send RTS request
+        CSMAFrame *rts = new CSMAFrame;
+        rts->setType(RTS);
+        rts->setResDuration(transmitDuration);
+        rts->setSrc(*srcMAC);
+        rts->setDest(*destMAC);
 
-            CSMAFrame* rtsFrame = new CSMAFrame;
+        sendToAllReachableDevices((cPacket*) rts);
 
-            rtsFrame->setSrc(msgBuffer.front()->getSrc());
-            rtsFrame->setDest(msgBuffer.front()->getDest());
-            rtsFrame->setType(RTS);
-
-            sendToAllReachableDevices(rtsFrame);
-
-            // Schedule another timeout for expected response to RTS.
-
-            if (!rtsTimeout->isScheduled()) {
-                scheduleAt(simTime() + DIFS, rtsTimeout);
-
-            }
-            // Reset handled timeout
-
-        }
+        rtsTimeout = new cMessage("rtsTimeout");
+        scheduleAt(simTime() + DIFS, rtsTimeout);
+        cancelEvent(backoffTimeout);
+//        backoffTimeout = NULL;
 
     } else if (msg == rtsTimeout) {
         // TODO:
         // Create random backoff before trying to re-send an RTS.
-        simtime_t delay = SIFS * (rand() % 10);
-
-        if (!backoffTimeout->isScheduled()) {
-            scheduleAt(simTime() + delay, backoffTimeout);
-        }
         // Reset handled timeout
 
+        double rndDelay = rand() % ((int)maxBackoff * 10) / 10.0;
+
+        backoffTimeout = new cMessage("backoffTimeout");
+        scheduleAt(simTime() + rndDelay, backoffTimeout);
+        cancelEvent(rtsTimeout);
+//        rtsTimeout = NULL;
+
+        EV << "handling rtsTimeout; wait " << rndDelay << " seconds" << endl;
+
     } else if(msg == colTimeout){
+        EV << "handling colTimeout; " << endl;
+
         // TODO:
         // Check if more than one msg arrived during the timeout.
         // If so, it's a collision -> Delete messages and reset counter.
         // Reset handled timeout
 
-
         if (numOfConcurrentMsgs > 1) {
+            EV << "collision detected" << endl;
+            delete msg;
+        } else {
+            EV << "sending CTS" << endl;
 
-            msgBuffer.clear();
-            numOfConcurrentMsgs = 0;
+            // connection with client may be established
+            CSMAFrame *rcvframe = check_and_cast<CSMAFrame*>(msg);
 
+            // prepare CTS message
+            CSMAFrame *rframe = new CSMAFrame;
+            rframe->setType(CTS);
+            rframe->setResDuration(rcvframe->getResDuration());
+            rframe->setSrc(rcvframe->getDest());
+            rframe->setDest(rcvframe->getSrc());
+
+            // send
+            sendToAllReachableDevices((cPacket*) rframe);
+
+//            connectedMAC = rcvframe->getSrc();
         }
-        else if (numOfConcurrentMsgs == 1) {
 
-            CSMAFrame *ctsFrame = new CSMAFrame;
+        // reset related variables
+        cancelEvent(colTimeout);
+//        colTimeout = NULL;
+        numOfConcurrentMsgs = 0;
+    } else if(msg == ctsTimeout) {
+        EV << "other client's session expired => send new RTS" << endl;
 
-            ctsFrame->setSrc(*srcMAC);
-            ctsFrame->setDest(msgBuffer.front()->getDest());
-            ctsFrame->setType(CTS);
+        // resend RTS now that other client's session has expired
 
-            sendToAllReachableDevices(ctsFrame);
+        // prepare & (re)send RTS request
+        CSMAFrame *rts = new CSMAFrame;
+        rts->setType(RTS);
+        rts->setResDuration(transmitDuration);
+        rts->setSrc(*srcMAC);
+        rts->setDest(*destMAC);
 
-            msgBuffer.clear();
-            numOfConcurrentMsgs = 0;
-        }
+        sendToAllReachableDevices((cPacket*) rts);
+
+        rtsTimeout = new cMessage("rtsTimeout");
+        scheduleAt(simTime() + DIFS, rtsTimeout);
+        cancelEvent(ctsTimeout);
+//        ctsTimeout = NULL;
     }
 }
 
@@ -107,41 +140,25 @@ void CSMA::handleUpperLayerMessage(cMessage *msg)
 {
     // TODO
 
-    //get control info from received upper layer datagram
+    EV << "received data from upper layer" << endl;
 
-    IPDatagram *ipData = check_and_cast<IPDatagram*>(msg);
-    CSMAControlInfo *cInfo = check_and_cast<CSMAControlInfo*>(ipData->removeControlInfo());
+    // take data packet for transmission
+    IPDatagram *ipd = check_and_cast<IPDatagram*>(msg);
+    transmitData = ipd->decapsulate();
 
+    // send RTS request to start connection
+    CSMAFrame *rts = new CSMAFrame;
+    rts->setType(RTS);
+    rts->setResDuration(transmitDuration);
+    rts->setSrc(*srcMAC);
+    rts->setDest(*destMAC);
 
-    //create CSMAFrame
-    CSMAFrame *dataFrame = new CSMAFrame;
-    dataFrame->setSrc(cInfo->getSrc());
-    dataFrame->setDest(cInfo->getDest());
-    dataFrame->setType(DATA);
-    dataFrame->encapsulate(ipData);
+    sendToAllReachableDevices((cPacket*) rts);
 
+    rtsTimeout = new cMessage("rtsTimeout");
+    scheduleAt(simTime() + DIFS, rtsTimeout);
+    new_data = true;
 
-    // send RTS if there is no older frame waiting / nobody else has
-    // sent an RTS -> REQUEST TO SEND
-
-    if (msgBuffer.empty() && !backoffTimeout->isScheduled()) {
-
-        CSMAFrame *rts = new CSMAFrame;
-
-        rts->setSrc(cInfo->getSrc());
-        rts->setDest(cInfo->getDest());
-        rts->setType(RTS);
-
-        sendToAllReachableDevices(rts);
-
-
-        if (!rtsTimeout->isScheduled()) {
-
-            scheduleAt(simTime() + DIFS, rtsTimeout);
-        }
-    }
-
-    msgBuffer.push_back(dataFrame);
 }
 
 void CSMA::handleLowerLayerMessage(cMessage *msg)
@@ -159,78 +176,81 @@ void CSMA::handleLowerLayerMessage(cMessage *msg)
     }
 }
 
-void CSMA::handleMessageForMe(CSMAFrame *frame)
-{
+void CSMA::handleMessageForMe(CSMAFrame *frame) {
     switch (frame->getType()) {
-        case RTS: {
-            // TODO
+    case RTS: {
+        EV << "received RTS; waiting" << endl;
 
-            numOfConcurrentMsgs++;
+        // TODO
 
-            msgBuffer.push_back(frame);
+        // RTS received -> wait for more in case of collisions
+        numOfConcurrentMsgs++;
+        colTimeout = (cPacket*)frame;//new cMessage("colTimeout");
+        scheduleAt(simTime() + SIFS, colTimeout);
 
-            if (!colTimeout->isScheduled()) {
-                EV << ": collision timeout started\n";
+        break;
+    }
+    case CTS: {
+        EV << "received CTS response; sending data to server" << endl;
 
-                scheduleAt(simTime() + SIFS, colTimeout);
-            }
+        // TODO
 
-            break;
+        // send data packet
+        CSMAFrame *dataframe = new CSMAFrame;
+        dataframe->setType(DATA);
+        dataframe->setSrc(*srcMAC);
+        dataframe->setDest(*destMAC);
+        dataframe->encapsulate((cPacket*)transmitData->dup());
+
+        sendToAllReachableDevices((cPacket*) dataframe);
+        new_data = false;
+
+        break;
+    }
+    case DATA: {
+        EV << "received data; sending ack" << endl;
+        // TODO
+
+        // send ack
+        CSMAFrame *ackframe = new CSMAFrame;
+        ackframe->setType(ACK);
+        ackframe->setSrc(frame->getDest());
+        ackframe->setDest(frame->getSrc());
+
+        sendToAllReachableDevices((cPacket*) ackframe);
+
+        break;
+    }
+    case ACK: {
+        EV << "received ack; " << endl;
+
+        // TODO
+
+        // send more data packets; or do nothing if finished
+        if (new_data) {
+            EV << "sending next data packet" << endl;
+            // send data
+            CSMAFrame *dataframe = new CSMAFrame;
+            dataframe->setType(DATA);
+            dataframe->setSrc(*srcMAC);
+            dataframe->setDest(*destMAC);
+            dataframe->encapsulate((cPacket*)transmitData);
+
+            sendToAllReachableDevices((cPacket*) dataframe);
+            new_data = false;
+        } else {
+            EV << "finished transmission; stop" << endl;
+            finished = true;
+            if (rtsTimeout != NULL) cancelEvent(rtsTimeout);
+            if (backoffTimeout != NULL)cancelEvent(backoffTimeout);
+            if (ctsTimeout != NULL) cancelEvent(ctsTimeout);
         }
-        case CTS: {
-            // TODO
 
-            // check if we are still waiting for CTS and
-            // if its so, cancel the timeout and send data.
-            if (rtsTimeout->isScheduled()) {
-
-                cancelEvent(rtsTimeout);
-                sendToAllReachableDevices(msgBuffer.front());
-
-            }
-            break;
-        }
-        case DATA: {
-            // TODO
-            // received data frame -> now send ack frame to
-            // source of data.
-
-            EV << ": DATA receviced -> send ACK\n";
-            CSMAFrame *ackFrame = new CSMAFrame;
-
-            ackFrame->setSrc(*srcMAC);
-            ackFrame->setDest(frame->getSrc());
-            ackFrame->setType(ACK);
-
-            sendToAllReachableDevices(ackFrame);
-
-            break;
-        }
-        case ACK: {
-            // TODO
-
-            EV << ": ACK received !!\n";
-
-            // receiver got data -> delet it from buffer
-            msgBuffer.pop_front();
-
-            //check if there are still messages waiting.
-
-            if (!msgBuffer.empty()) {
-
-                CSMAFrame *rts = new CSMAFrame;
-                rts->setSrc(msgBuffer.front()->getSrc());
-                rts->setDest(msgBuffer.front()->getDest());
-                rts->setType(RTS);
-
-                sendToAllReachableDevices(rts);
-            }
-
-            break;
-        }
-        default:
-            EV << "Message type not recognised.\n";
-            break;
+        break;
+    }
+    default:
+        EV << "Message type not recognised.\n";
+        break;
     }
 }
 
@@ -240,32 +260,39 @@ void CSMA::handleMessageForOthers(CSMAFrame *frame)
         case RTS: {
             // TODO
 
-            if (!backoffTimeout->isScheduled()) {
-
-                simtime_t delay = (SIFS * (rand() % 6) + 1);
-
-               scheduleAt(simTime() + delay, backoffTimeout);
-
-            }
+            // do nothing
             break;
         }
         case CTS: {
+            EV << "received other client's CTS; ";
+
             // TODO
 
-            if (backoffTimeout->isScheduled()) {
+            cancelEvent(rtsTimeout);
+            cancelEvent(backoffTimeout);
 
-                cancelEvent(backoffTimeout);
+            if (!finished) {
+                EV << "wait for other connection to time out" << endl;
 
-                scheduleAt(simTime() + frame->getResDuration(), backoffTimeout);
+                double waitPeriod = frame->getResDuration();
+                ctsTimeout = new cMessage("ctsTimeout");
+                scheduleAt(simTime() + waitPeriod, ctsTimeout);
+            } else {
+                EV << "do nothing" << endl;
             }
+
             break;
         }
         case DATA: {
             // TODO?
+
+            // do nothing
             break;
         }
         case ACK: {
             // TODO?
+
+            // do nothing
             break;
         }
         default:
@@ -283,7 +310,7 @@ void CSMA::sendToAllReachableDevices(cMessage *msg){
 /**
  * Allows to set which devices are reachable by which.
  * Individually customisable for each device by commenting out the ones
- * that shoud not be reached.
+ * that should not be reached.
  */
 void CSMA::findAndSetReachableDevices()
 {

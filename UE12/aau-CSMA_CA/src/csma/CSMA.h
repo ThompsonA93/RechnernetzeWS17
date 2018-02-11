@@ -37,6 +37,11 @@ protected:
     MACAddress *destMAC;
     std::list <CSMAFrame*> msgBuffer;
     std::vector<cModule*> reachableDevices;
+
+    bool finished;
+    bool new_data;
+    cMessage *ctsTimeout;
+    cMessage *transmitData;
 };
 
 #endif

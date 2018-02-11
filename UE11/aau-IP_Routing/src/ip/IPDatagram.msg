@@ -29,4 +29,8 @@ packet IPDatagram
 	
 	inet::IPv4Address srcIP;
 	inet::IPv4Address destIP;
+	
+	// Additional from UE 
+	//int ver, headLen, typeOfService, length, identifier, flags, fragmentOffset, ttl, upperLayer, checksum, options;
+	//string data; <-> TCP/UDPSegment
 }

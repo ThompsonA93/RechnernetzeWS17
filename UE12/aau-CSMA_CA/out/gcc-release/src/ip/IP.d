@@ -1,5 +1,5 @@
 ../out/gcc-release/src/ip/IP.o: ip/IP.cc ip/IP.h \
- /home/muhamed/bin/omnetpp-5.2/include/omnetpp.h \
+ /home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h \
  ip/../3rdParty/IPv4Address.h ip/../3rdParty/INETDefs.h \
  ip/../3rdParty/precompiled_release.h ip/../3rdParty/precompiled.h \
  ip/../3rdParty/opp_defines.h ip/../3rdParty/features.h \
@@ -9,7 +9,7 @@
 
 ip/IP.h:
 
-/home/muhamed/bin/omnetpp-5.2/include/omnetpp.h:
+/home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h:
 
 ip/../3rdParty/IPv4Address.h:
 
