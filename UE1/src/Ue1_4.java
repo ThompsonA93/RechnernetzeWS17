@@ -1,4 +1,4 @@
-package src;
+package UE1.src;
 
 public class Ue1_4 {
     public void init(){

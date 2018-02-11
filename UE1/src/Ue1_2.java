@@ -1,4 +1,4 @@
-package src;
+package UE1.src;
 
 import java.io.*;
 import java.nio.charset.Charset;
