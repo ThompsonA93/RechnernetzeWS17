@@ -1,5 +1,3 @@
-package UE1.src;
-
 import java.nio.ByteBuffer;
 
 /** TODO
