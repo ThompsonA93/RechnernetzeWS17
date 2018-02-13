@@ -1,76 +1,93 @@
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-
-/** TODO
- * Problem invoking the issued charset in BufferedWriter below.
- * >> FIXME below
- *
- * Invoked using main of Control
- * */
 public class Ue1_2 {
-    private File fIn, fOut;
-    private String outName;
+    String inFile;
+    String outFile;
+    BufferedWriter bw;
+    BufferedReader br;
+    File tmp;
 
     public void init(){
         System.out.println("Executing UE1_2.");
-        fetchFilePathsFromCmd();
-        executeZipTransformation();
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter Filename to convert.");
+        inFile = s.nextLine();
+        System.out.println("Enter outputname.");
+        outFile = s.nextLine();
+
+        initFiles();
+        convertToISO();
+
+        try{
+            bw.close();
+            br.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
         System.out.println("End of UE1_2");
     }
 
-    private void fetchFilePathsFromCmd(){
-        System.out.println("Enter File-Path.\n" +
-                "Loc.: /home/thompson/Downloads/TODO/RNP-UE/UE1/utf8files\n" +
-                "\tFile.: file1.txt || file2.txt\n");
-        Scanner s = new Scanner(System.in);
-        Path p = Paths.get(s.nextLine());
-
-        System.out.printf("\nPath entered: " + p.toString() + "\n\tChecking validity: ");
-        fIn = new File(String.valueOf(p));
-        if(!fIn.exists()){
-            System.out.printf("File not existant.\n");
+    private void initFiles() {
+        try {
+            br = new BufferedReader(new FileReader(inFile));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
-        else{
-            System.out.printf("Existing file found.\n");
-        }
-        System.out.printf("Enter an output name. >>");
-        outName = ( s.nextLine()+".zip");
-    }
-
-    private void executeZipTransformation(){
-        fOut = new File(outName);
-        ZipEntry zE = new ZipEntry("CompressedData.txt"); //  Data within Zip
 
         try {
-            BufferedReader br = new BufferedReader(new FileReader(fIn));
+            // temporary file where converted text will be stored
+            tmp = File.createTempFile("convert", ".tmp");
+            tmp.deleteOnExit();
 
-            ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(fOut));
-            // FIXME: Encoding remains as System.getProperty("file.encoding") => UTF-8
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(zos, Charset.forName("ISO-8859-1")));
-            zos.putNextEntry(zE);
+            // OutputStreamWriter can handle different charsets, so use that
+            bw = new BufferedWriter((new OutputStreamWriter(new FileOutputStream(tmp), StandardCharsets.ISO_8859_1)));
 
-            String line = null;
-            while((line = br.readLine()) != null){
-                bw.append(line).append('\n');
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void convertToISO() {
+        String read;
+
+        try {
+            while ((read = br.readLine()) != null) {
+                bw.write(read);
+                bw.write("\r\n"); // also write CRLF. There is nothing to replace as this reader doesn't add any line separator
             }
-            bw.flush(); // According to stackoverflow :: Good convention
+            bw.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        zipCompression();
+    }
+
+    private void zipCompression() {
+        byte[] buffer = new byte[1000];
+        int bytesRead;
+
+        try {
+            ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(outFile));
+            FileInputStream fis = new FileInputStream(tmp);
+
+            zos.putNextEntry(new ZipEntry("converted.txt"));
+
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                zos.write(buffer, 0, bytesRead);
+            }
 
             zos.closeEntry();
             zos.finish();
+            zos.close();
+            fis.close();
 
-            br.close();
-            bw.close();
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,10 +1,11 @@
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 /** TODO
  * Not implemented yet.
  */
 public class Ue1_3 {
-    ByteBuffer bb;
+    private final byte version = 2;
 
     public void init(){
         boolean isData = true;
@@ -13,34 +14,44 @@ public class Ue1_3 {
         byte[] payload = new byte[20];
 
 
-        createMsg(isData, isUrgent, sequenceNumber, payload);
+        byte[] msg = createMsg(isData, isUrgent, sequenceNumber, payload);
+        printMsg(msg);
     }
 
-    private void createMsg(boolean isData, boolean isUrgent, int sequenceNumber, byte[] payload) throws IllegalArgumentException {
-        bb = ByteBuffer.allocate(4 + 4 + (payload.length/31));
+    private byte[] createMsg(boolean isData, boolean isUrgent, int sequenceNumber, byte[] payload) throws IllegalArgumentException {
+        // check for invalid input
+        if (payload.length < 0) throw new IllegalArgumentException();
+        if (sequenceNumber < 0 || sequenceNumber > Math.pow(2, 16) - 1) throw new IllegalArgumentException();
 
-        // Field 1
-        byte[] field = new byte[2];
-        field[0] = (byte) 0x02;
-        field[1] = (byte) 0x00;
-        bb.put(field);
-        if(sequenceNumber > Math.pow(2, (16-1))) throw new IllegalArgumentException();
-        bb.put((byte) sequenceNumber).array();
+        ByteBuffer bb = ByteBuffer.allocate(4 + 4 + (Byte.BYTES * payload.length));
+        bb.order(ByteOrder.BIG_ENDIAN);
 
-        // Field 2
-        bb.putInt((byte)payload.length).array();
+        // insert protocol Version
+        byte byteVersion = version << 3;
+        bb.put(byteVersion);               // Does not like version << 3
 
-        // Field 3
-        for(byte b : payload){
-            bb.put(b);
+        // insert D and U fields
+        byte flags = 0;
+        if (isData) flags = (byte) ((flags | 1) << 1);  // set 1 first & shiftleft
+        if (isUrgent) flags = (byte)(flags | 1);        // Set second
+        bb.put(flags);
+
+        // put sequence number
+        bb.putShort((short)sequenceNumber);
+
+        // put payload length
+        bb.putInt(payload.length);
+
+        // put payload
+        bb.put(payload);
+        return bb.array();
+    }
+
+    private void printMsg(byte[] message) {
+        System.out.println("Printing Message");
+        for (byte b : message) {
+            System.out.print(b + " ");
         }
-
-        printMsg();
-    }
-
-    private void printMsg(){
-        bb.rewind();
-        while (bb.hasRemaining())
-            System.out.println((int) bb.get());
+        System.out.println();
     }
 }
