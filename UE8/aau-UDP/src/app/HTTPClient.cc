@@ -28,10 +28,6 @@ void HTTPClient::initialize() {
     // Initialize Params - FIXMEs
     srcPort = par("srcPort");
     destPort = par("destPort");
-    clientIPv4->set("143.205.193.49");
-    //clientIPv6->set();
-    serverIPv4->set("143.205.192.1");
-    //serverIPv6->set();
 
     // Initialize state
     state = REQUEST_INDEX;
@@ -48,12 +44,7 @@ void HTTPClient::initialize() {
     UDPControlInfo* uci = new UDPControlInfo;
     uci->setSrcPort(srcPort);
     uci->setDestPort(destPort);
-/*
-    uci->setSrcIPv4(*clientIPv4);
-    uci->setSrcIPv6(*clientIPv6);
-    uci->setDestIPv4(*serverIPv4);
-    uci->setDestIPv6(*serverIPv6);
-*/
+
     // Attack ControlInfo
     hcm->setControlInfo(uci);
 
@@ -88,6 +79,15 @@ void HTTPClient::handleMessage(cMessage *msg) {
         HTTPClientMsg* hcm = new HTTPClientMsg;
         hcm->setRequest(request);
         hcm->setMethod(method);
+
+        UDPControlInfo* uci = new UDPControlInfo;
+        uci->setSrcPort(srcPort);
+        uci->setDestPort(destPort);
+
+        // Attack ControlInfo
+        hcm->setControlInfo(uci);
+
+
         send(hcm, out);
 
     }
@@ -98,6 +98,15 @@ void HTTPClient::handleMessage(cMessage *msg) {
         HTTPClientMsg* hcm = new HTTPClientMsg;
         hcm->setRequest(request);
         hcm->setMethod(method);
+
+
+        UDPControlInfo* uci = new UDPControlInfo;
+        uci->setSrcPort(srcPort);
+        uci->setDestPort(destPort);
+
+        // Attack ControlInfo
+        hcm->setControlInfo(uci);
+
         send(hcm, out);
     }
     delete msg, resp;

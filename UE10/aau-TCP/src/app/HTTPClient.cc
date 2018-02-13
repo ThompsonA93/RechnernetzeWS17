@@ -29,7 +29,6 @@ void HTTPClient::initialize()
     destPort = par("destPort");
     srcPort = par("srcPort");
 
-
     scheduleAt(simTime(), new HTTPClientMsg);
 }
 
@@ -122,7 +121,6 @@ void HTTPClient::handleMessage(cMessage *msg)
 
                 }
 
-            }
-
+        }
     }
 }
