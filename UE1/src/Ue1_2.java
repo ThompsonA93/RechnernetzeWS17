@@ -59,14 +59,17 @@ public class Ue1_2 {
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(zos, Charset.forName("ISO-8859-1")));
             zos.putNextEntry(zE);
 
-            String line = null;
-            while((line = br.readLine()) != null){
-                bw.append(line).append('\n');
+            int line = 0;
+            while((line = br.read()) != -1){
+
+                if (line == 10){
+                    line = 13;
+                }
+
+                zos.write(line);
             }
-            bw.flush(); // According to stackoverflow :: Good convention
 
             zos.closeEntry();
-            zos.finish();
 
             br.close();
             bw.close();
