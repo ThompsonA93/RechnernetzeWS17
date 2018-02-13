@@ -24,14 +24,25 @@ import src.tcp.TCP;
 
 module ClientHost
 {
+    @display("bgb=350, 300");
+
     gates:
         input inNet;
         output outNet;
 
     submodules:
-        // TODO add submodules for HTTPClient and UDP
+		ApplicationLayer: HTTPClient{
+           @display("p=175,75");
+        }
+        NetworkLayer: TCP {
+            @display("p=175,200");
+        }
 
     connections:
-        // TODO connect HTTPClient with UPD and gates of ClientHost
-}
+        inNet --> {delay = 5ms;} --> NetworkLayer.fromLowerLayer;
 
+        NetworkLayer.toUpperLayer --> {delay = 5ms;} --> ApplicationLayer.fromLowerLayer;
+        ApplicationLayer.toLowerLayer --> {delay = 5ms;} --> NetworkLayer.fromUpperLayer;
+
+		NetworkLayer.toLowerLayer--> {delay = 5ms;} --> outNet;
+}

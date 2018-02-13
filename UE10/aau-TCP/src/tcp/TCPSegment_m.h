@@ -19,7 +19,7 @@
 
 
 /**
- * Class generated from <tt>tcp/TCPSegment.msg:21</tt> by nedtool.
+ * Class generated from <tt>tcp/TCPSegment.msg:20</tt> by nedtool.
  * <pre>
  * packet TCPSegment
  * {
@@ -37,7 +37,6 @@
  *     int receiveWindow = 0;	// 16 bit receive window
  *     bool psh = false;	// PSH flag for indicting immediate passing on of information
  *     bool urg = false;	// URG flag for indicating 'urgent' segments (by app layer)
- * 
  * }
  * </pre>
  */

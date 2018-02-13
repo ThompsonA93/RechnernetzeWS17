@@ -48,11 +48,12 @@ void HTTPClient::initialize() {
     UDPControlInfo* uci = new UDPControlInfo;
     uci->setSrcPort(srcPort);
     uci->setDestPort(destPort);
+/*
     uci->setSrcIPv4(*clientIPv4);
     uci->setSrcIPv6(*clientIPv6);
     uci->setDestIPv4(*serverIPv4);
     uci->setDestIPv6(*serverIPv6);
-
+*/
     // Attack ControlInfo
     hcm->setControlInfo(uci);
 

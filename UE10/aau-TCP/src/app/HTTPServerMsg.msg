@@ -18,5 +18,5 @@
 // 621.800 (17W) Computer Networks and Network Programming
 
 packet HTTPServerMsg {
-    // TODO use from previous exercise
+	string response;
 }

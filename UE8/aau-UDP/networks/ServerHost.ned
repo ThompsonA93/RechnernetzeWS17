@@ -29,14 +29,16 @@ module ServerHost
         output outNet;
 
     submodules:
-		ApplicationLayer: HTTPServer;
-		NetworkLayer: UDP;
+        ApplicationLayer: HTTPServer;
+        NetworkLayer: UDP {
 
+            @display("p=91,50");
+        }
     connections:
-	ApplicationLayer.toLowerLayer -->{delay = 20ms; }-->NetworkLayer.fromUpperLayer;
-	NetworkLayer.toUpperLayer-->{delay = 20ms; }-->ApplicationLayer.fromLowerLayer;
-	
-	NetworkLayer.toLowerLayer -->{delay = 20ms; }--> outNet;
-	inNet -->{delay = 20ms; }-->NetworkLayer.fromLowerLayer;
+        ApplicationLayer.toLowerLayer --> {  delay = 20ms; } --> NetworkLayer.fromUpperLayer;
+        NetworkLayer.toUpperLayer --> {  delay = 20ms; } --> ApplicationLayer.fromLowerLayer;
+
+        NetworkLayer.toLowerLayer --> {  delay = 20ms; } --> outNet;
+        inNet --> {  delay = 20ms; } --> NetworkLayer.fromLowerLayer;
 }
 
