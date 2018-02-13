@@ -26,13 +26,15 @@ network HTTPNetwork
 {
     parameters:
         // TODO add global parameters if needed
-    
-    @display("bgb=300,200");
+
+        @display("bgb=300,200");
     submodules:
-	Client: ClientHost;
-	Server: ServerHost;
-        
+        Client: ClientHost;
+        Server: ServerHost {
+
+            @display("p=46,117");
+        }
     connections:
-	Client.outNet-->{delay = 300ms; }-->Server.inNet;
-	Server.outNet-->{delay = 300ms; }-->Client.inNet;
+        Client.outNet --> {  delay = 300ms; } --> Server.inNet;
+        Server.outNet --> {  delay = 300ms; } --> Client.inNet;
 }

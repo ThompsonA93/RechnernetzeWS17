@@ -1,5 +1,5 @@
 ../out/gcc-release/src/app/HTTPServer.o: app/HTTPServer.cc \
- app/HTTPServer.h /home/thompson/Uni/IDEs/omnetpp-5.2/include/omnetpp.h \
+ app/HTTPServer.h /home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h \
  app/../3rdParty/IPv4Address.h app/../3rdParty/INETDefs.h \
  app/../3rdParty/precompiled_release.h app/../3rdParty/precompiled.h \
  app/../3rdParty/opp_defines.h app/../3rdParty/features.h \
@@ -11,7 +11,7 @@
 
 app/HTTPServer.h:
 
-/home/thompson/Uni/IDEs/omnetpp-5.2/include/omnetpp.h:
+/home/thompson/Uni/IDEs/omnetpp-5.2.1/include/omnetpp.h:
 
 app/../3rdParty/IPv4Address.h:
 
