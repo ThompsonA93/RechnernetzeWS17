@@ -5,7 +5,7 @@ last-runnumber=0
 [Inspector-0]
 classname=ClientHost
 fullscreen=false
-geom=@Rect(1417 332 327 386)
+geom=@Rect(1366 360 327 386)
 id=@Variant(\0\0\0\x81\0\0\0\0\0\0\0\x2)
 object=HTTPNetwork.Client
 type=2
@@ -13,7 +13,7 @@ type=2
 [Inspector-1]
 classname=ServerHost
 fullscreen=false
-geom=@Rect(1417 259 401 448)
+geom=@Rect(1417 287 401 448)
 id=@Variant(\0\0\0\x81\0\0\0\0\0\0\0\x3)
 object=HTTPNetwork.Server
 type=2

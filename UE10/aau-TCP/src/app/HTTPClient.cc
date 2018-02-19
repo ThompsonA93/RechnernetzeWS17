@@ -96,7 +96,6 @@ void HTTPClient::handleMessage(cMessage *msg)
 
 
                 messageCounter++;
-
                 if (messageCounter == MAX_MESSAGE_COUNT) {
 
 
