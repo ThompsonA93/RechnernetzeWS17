@@ -122,7 +122,10 @@
 
     \subsubsection{Data Link Layer}
     \label{subsubsection:OSI_data_link_layer}
-    Segmentiert Pakete in Frames und checkt Prüfsummen. Man prüft die fehlerfreie Übertragung als auch Zugriff auf Übertragungsmedium, Bridge und/oder Switch. Nach IEEE ist sie in Logical Link Control und MAC aufgeteilt. (In der VO: Data Plane, Control Plane)
+    Segmentiert Pakete in Frames und checkt Prüfsummen. 
+    Man prüft die fehlerfreie Übertragung als auch Zugriff auf Übertragungsmedium, 
+    Bridge und/oder Switch. Nach IEEE ist sie in Logical Link Control und MAC aufgeteilt (In der VO: Data Plane, Control Plane). 
+    
     \begin{enumerate}
         \item ARP - IPv4 Adressierung in Ethernet-Netzwerken (IPv6 -- NDP),
         \item Shortest Path Bridging,
@@ -132,7 +135,8 @@
 
     \subsubsection{Physical Layer}
     \label{subsubsection:OSI_physical_layer}
-    Wandelt Bits in ein angemessenes Signal zur Übertragung um und handled physikalische Übertragungsmöglichkeiten. Behandelt die unterliegenste Hardware: Repeater, Hubs, Leitungen, Stecker u.s.w.
+    Wandelt Bits in ein angemessenes Signal zur Übertragung um und handled physikalische Übertragungsmöglichkeiten. 
+    Behandelt die unterliegenste Hardware: Repeater, Hubs, Leitungen, Stecker usw.
     
     \subsection{TCP-IP Modell}
     \subsubsection{Application Layer}
@@ -158,7 +162,9 @@
     Behandelt End-to-End-Kommunikation. Nutzt TCP als auch UDP zum Datenaustausch. 
     
     \subsubsection{Vermittlungsschicht (IP)}
-    Umfasst die Weitervermittlungen von Paketen sowie Routing durch das Web, ermöglicht durch IP. Dual-Stacks erkennen Ipv4 oder Ipv6.
+    \label{subsubsection:TCP_ip_layer}
+    Umfasst die Weitervermittlungen von Paketen sowie Routing durch das Web, ermöglicht durch IP. 
+    Dual-Stacks erkennen Ipv4 oder Ipv6.
 
     \subsubsection{Network Layer}
     \label{subsubsection:TCP_network_layer}
@@ -170,39 +176,51 @@
         \item Token Ring - IEEE 802.5,
         \item WLAN: IEEE 802.11,
         \item ARP -- Adress Resolution Protocol: Adressumsetzung zwischen IP und MAC,
-        \item RARP -- Reverse Adress Resolution Protocol, deprecated,
+        \item RARP -- Reverse Adress Resolution Protocol (\emph{deprecated}),
         \item PPP: Point-to-Point Protocol.
     \end{enumerate}
+
     \subsection{Networklayer -- Data Plane and Control Plane}
-    Man differenziert den Network Layer grundlegend in Data Plane und Control Plane.
-    Der \textbf{Dataplane} beschreibt alles rund um den lokalen Router, während der \textbf{Control Plane} das gesamte Netzwerk betrachtet.
-    Der Dataplane implementiert das Forwarding und Datenfragmentierung, während die Control Plane das Routing beschreibt. Letzteres kann via Routing Algorithmen oder SDNs definiert werden.
+    \label{subsection:data_plane_and_control_plane}
+    Man differenziert den Network Layer grundlegend zwischen \textbf{Data Plane} und \textbf{Control Plane}.
+    Der \textbf{Dataplane} beschreibt alles rund um den lokalen Router, 
+    während der \textbf{Control Plane} das gesamte Netzwerk betrachtet.
+    Der Dataplane implementiert das Forwarding und Datenfragmentierung, 
+    während die Control Plane das Routing beschreibt. 
+    Letzteres kann via Routing Algorithmen oder SDNs definiert werden.
     
 \section{Wichtige Protokolle}   
     \subsection{DHCP}
-    Das Dynamic Host Configurations Protocol dient einem jeden Gerät sich an das Internet zu verbinden. Es ist teil der Anwendungsschicht. DHCP wird primär verwendet, wenn ein Gerät zu einem neuen System angeschlossen wird.
+    \label{subsection:protocols_dhcp}
+    Das Dynamic Host Configurations Protocol dient einem jeden Gerät sich an das Internet zu verbinden. 
+    Es ist teil der Anwendungsschicht. 
+    DHCP wird primär verwendet, wenn ein Gerät zu einem neuen System angeschlossen wird.
     
-    Ein DHCP-Request wird an den Router gesendet, welcher dem Gerät eine IP-Addresse zuweist. Zudem weiß der Klient nun die Adresse des DNS Servers als auch die IP Adresse des FIRST-HOP Routers.
+    Ein DHCP-Request wird an den Router gesendet, welcher dem Gerät eine IP-Addresse zuweist. 
+    Zudem weiß der Client nun die Adresse des DNS Servers als auch die IP-Adresse des FIRST-HOP Routers.
     
     $\rightarrow$ DNS (IPs) \& ARP (MACs) resolve following adresses.
     
     \subsection{HTTP}
-    Das Hyper Text Transfer Protokol ist ein zustandsloses Protokoll zur Datenübertragung auf der Anwendungsschicht. Es gilt dabei Dokumente in einen Webbrowser zu laden.
-    \begin{enumerate}
-        \item HTTP/1.0\\
-        Bei HTTP/1.0 wird vor jeder Anfrage eine neue TCP-Verbindung aufgebaut und nach der Datenübertragung wieder geschlossen. Hier müssen per geladenem Element 1 Verbindung aufgebaut werden.
-        \item HTTP/1.1\\
-        In HTTP/1.1 kann der Klient durch den KeepAlive Headereintrag die Verbindung aufrecht erhalten. Mithilfe von HTTP-Pipelining kann somit mittels einer einzigen TCP-Verbindung alle Elemente eines Dokumentes anfordern. Dies fürt zu Performanzsteigerungen.
+    \label{subsection:protocols_http}
+    Das Hyper Text Transfer Protokol ist ein zustandsloses Protokoll zur Datenübertragung auf der Anwendungsschicht. 
+    Es gilt dabei Dokumente in einen Webbrowser zu laden.
+    \begin{description}
+        \item [HTTP/1.0] Bei HTTP/1.0 wird vor jeder Anfrage eine neue TCP-Verbindung aufgebaut und nach der Datenübertragung wieder geschlossen. Hier müssen per geladenem Element 1 Verbindung aufgebaut werden.
+        \item [HTTP/1.1] In HTTP/1.1 kann der Klient durch den KeepAlive Headereintrag die Verbindung aufrecht erhalten. Mithilfe von HTTP-Pipelining kann somit mittels einer einzigen TCP-Verbindung alle Elemente eines Dokumentes anfordern. Dies fürt zu Performanzsteigerungen.
         
         Hinzu kommt der PUT-Befehl, womit man dem Server Daten senden kann, der DELETE-Befehl um diese Daten wieder zu löschen und eine TRACE-Methode zum Tracking von Packeten zum Server. 
-        \item HTTP/2.0\\
-        HTTP/2.0 bietet das Zusammenfassen mehrerer Anfragen (Multiplexing), Datenkompressionsmöglichkeiten (HPACK), Inhaltsübertragung in Binärform und Push-Verfahren, Serverseitig initiierte Datenübertragung.
-    \end{enumerate}
-    Befehle: GET, POST, HEAD, PUT, PATCH, DELETE, TRACE, OPTIONS, CONNECT.
+        \item [HTTP/2.0] HTTP/2.0 bietet das Zusammenfassen mehrerer Anfragen (Multiplexing), Datenkompressionsmöglichkeiten (HPACK), Inhaltsübertragung in Binärform und Push-Verfahren, Serverseitig initiierte Datenübertragung.
+        \item [Befehle] GET, POST, HEAD, PUT, PATCH, DELETE, TRACE, OPTIONS, CONNECT.
+    \end{description}
+    
     
     \subsection{FTP}
-    Das File Transfer Protokol ist ein zustandsbehaftetes Protokol zum Datentransfer über IP-Netzwerke. FTP ist Teil der Anwendungsschicht.
-    Man soll mithilfe von FTP den Datenaustausch vom Server zum Client, vom Client zum Server oder zwischen zwei Servern ermöglichen.
+    \label{subsection:protocols_ftp}
+    Das File Transfer Protokol ist ein zustandsbehaftetes Protokol zum Datentransfer über IP-Netzwerke. 
+    FTP ist Teil der Anwendungsschicht.
+    Man soll mithilfe von FTP den Datenaustausch vom Server zum Client, 
+    vom Client zum Server oder zwischen zwei Servern ermöglichen.
     
     FTP nutzt zur Steuerung und zum Übertragen von Daten zwei separate Verbindungen, wobei üblicherweise auf Port 21 der Controller aufgebaut wird und auf einem separaten Port die Datenübertragung stattfindet.
     \begin{center}
