@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{scrartcl}
     \usepackage[utf8]{inputenc}
     \usepackage[T1]{fontenc}
     \usepackage[naustrian]{babel}
@@ -41,22 +41,57 @@
     \end{center}
     \subsection{OSI-Modell}
     \subsubsection{Application Layer}
+    \label{subsubsection:OSI_application_layer}
     Im OSI-Modell dient der Application Layer dem Userinterface. Es handled I/O, bietet Userfunktionen und initiiert Verbindungen zu unterliegenden Schichten.
-    Bsp.: Webbrowser, E-Mail Dienste, Instant Messaging.\\Protokolle: HTTP, DNS, BGP, SMTP, POP3, IMAP
-
+    Bsp.: Webbrowser, E-Mail Dienste, Instant Messaging.
+    \paragraph{Protokolle:}
+    \begin{itemize}
+        \item HTTP,
+        \item DNS,
+        \item BGP, 
+        \item SMTP, 
+        \item POP3,
+        \item IMAP.
+    \end{itemize}
     \subsubsection{Presentation Layer}
-    Wandelt systemabhängige Daten (ASCII, EBCDIC) in systemunabhängige Datenformate (ASN.1) um oder behandelt Datenkompression und Verschlüsselung.\\Protokolle: Telnet, Tox, Network Data Representation, NetWare Core Protocol.
+    \label{subsubsection:OSI_presentation_layer}
+    Wandelt systemabhängige Daten (ASCII, EBCDIC) in systemunabhängige Datenformate (ASN.1) um oder behandelt Datenkompression und Verschlüsselung.
+    
+    \paragraph{Protokolle:}
+    \begin{itemize}
+        \item Telnet,
+        \item Tox,
+        \item Network Data Representation,
+        \item NetWare Core Protocol.
+    \end{itemize}
 
     \subsubsection{Session Layer}
-    Steuert Verbindungen in Form von Prozesskommunikation zweier Systeme, zum Datenaustausch. Es handelt sich hierbei um einen semi-permanenten Dialog bestehend aus Anfragen und Antworten.\\Hauptfunktionalitäten: Authentifizierung, Session Restoration.\\Protokolle: Rmote Procedure Call Protocol, Point-to-Point Tunelling Protocol, Real-Time Transport Control Protocol, Session Control Protocol.
+    \label{subsubsection:OSI_session_layer}
+    Steuert Verbindungen in Form von Prozesskommunikation zweier Systeme, zum Datenaustausch. 
+    Es handelt sich hierbei um einen semi-permanenten Dialog bestehend aus Anfragen und Antworten.
 
+    \paragraph{Hauptfunktionalitäten:}
+    \begin{itemize}
+        \item Authentifizierung,
+        \item Session Restoration.
+    \end{itemize}
+
+    \paragraph{Protokolle:}
+    \begin{itemize}
+        \item Rmote Procedure Call Protocol,
+        \item Point-to-Point Tunelling Protocol,
+        \item Real-Time Transport Control Protocol, 
+        \item Session Control Protocol.
+    \end{itemize}
     \subsubsection{Transport Layer}
-    In TCP/IP als auch im OSI-Modell: Realisiert Verbindung zwischen Quell und Zielhost mittels TCP und UDP. Es dient dem Zuordnen von Datenpaketen zu einer spezifischen Anwendung.
+    \label{subsubsection:OSI_transport_layer}
+    In TCP/IP als auch im OSI-Modell: Realisiert Verbindung zwischen Quell-, und Zielhost mittels TCP und UDP. 
+    Es dient dem Zuordnen von Datenpaketen zu einer spezifischen Anwendung.
     \begin{center}
         \begin{tabular}{l|l}
-        TCP & UDP                               \\\hline
+        \textbf{TCP} & \textbf{UDP}             \\\hline
         Congestion Control  &   Best Effort     \\
-    Flow Control        &   Fast            \\
+        Flow Control        &   Fast            \\
         'Handshake'         &   Low Overhead    \\
         Full-Duplex Data    &   Multicast       \\
         Connection-oriented &   Connectionless  \\
@@ -66,66 +101,77 @@
     \end{tabular}
     \end{center}
     Weitere Protokolle:
-    \begin{enumerate}
-        \item SCTP -- Stream Control Transmission Protocol
-        \item TLS -- Transport Layer Security: TCP+Verschlüsselung
-        \item DTLS -- Datagram Transport Layer Security: TLS+UDP
-    \end{enumerate}
+    \begin{description}
+        \item [SCTP] -- Stream Control Transmission Protocol,
+        \item [TLS] -- Transport Layer Security: TCP + Verschlüsselung,
+        \item [DTLS] -- Datagram Transport Layer Security: TLS + UDP.
+    \end{description}
 
     \subsubsection{Network Layer}
-    Implementiert Internet Protocol, IP. Das Zustellen der Daten zum richtigen Empfänger ist dessen Aufgabe, e.g. das Routing, in sowohl Leitungsorientierten als auch Paketorientierten Verbindugnen. Zudem das Bereitstellen netzwerkübergreifender Adressen, Aktualisierung von Routingtabellen und Fragmentierung von Datenpaketen. 
-    \begin{enumerate}
-        \item IP -- Internet Protocol: Übertragung
-        \item IPsec -- Internet Protocol Security: Sichere Datenverbindung
-        \item ICMP -- Internet Control Message Protocol: Kontrollnachrichten, Teil jeder IP.
-        \item OSPF -- Open Shortest Path First: Informationsaustausch zwischen Routern
-        \item BGP -- Border Gateway Protocol: Informationsaustausch zwischen autonomen Systemen
-        \item IGMP -- Internet Group Management: Definiert Multicast-Gruppen.
-    \end{enumerate}
+    \label{subsubsection:OSI_network_layer}
+    Implementiert Internet Protocol, IP. Die Zustellung der Daten zum richtigen Empfänger ist die Aufgabe von IP, e.g. das Routing, in sowohl leitungsorientierten als auch paketorientierten Verbindungen. 
+    Zudem das Bereitstellen netzwerkübergreifender Adressen, Aktualisierung von Routingtabellen und Fragmentierung von Datenpaketen. 
+    \begin{description}
+        \item [IP] -- Internet Protocol: Übertragung,
+        \item [IPsec] -- Internet Protocol Security: Sichere Datenverbindung,
+        \item [ICMP] -- Internet Control Message Protocol: Kontrollnachrichten, Teil jeder IP,
+        \item [OSPF] -- Open Shortest Path First: Informationsaustausch zwischen Routern,
+        \item [BGP] -- Border Gateway Protocol: Informationsaustausch zwischen autonomen Systemen,
+        \item [IGMP] -- Internet Group Management: Definiert Multicast-Gruppen.
+    \end{description}
 
-    \subsubsection{ Data Link Layer}
+    \subsubsection{Data Link Layer}
+    \label{subsubsection:OSI_data_link_layer}
     Segmentiert Pakete in Frames und checkt Prüfsummen. Man prüft die fehlerfreie Übertragung als auch Zugriff auf Übertragungsmedium, Bridge und/oder Switch. Nach IEEE ist sie in Logical Link Control und MAC aufgeteilt. (In der VO: Data Plane, Control Plane)
     \begin{enumerate}
-        \item ARP - IPv4 Adressierung in Ethernet-Netzwerken (IPv6 -- NDP)
-        \item Shortest Path Bridging
-        \item IEEE 802.11 - WLAN
-        \item IEEE 802.4 - Token Bus, 802.5 - Token Ring
+        \item ARP - IPv4 Adressierung in Ethernet-Netzwerken (IPv6 -- NDP),
+        \item Shortest Path Bridging,
+        \item IEEE 802.11 - WLAN,
+        \item IEEE 802.4 - Token Bus, 802.5 - Token Ring.
     \end{enumerate}
 
     \subsubsection{Physical Layer}
+    \label{subsubsection:OSI_physical_layer}
     Wandelt Bits in ein angemessenes Signal zur Übertragung um und handled physikalische Übertragungsmöglichkeiten. Behandelt die unterliegenste Hardware: Repeater, Hubs, Leitungen, Stecker u.s.w.
     
     \subsection{TCP-IP Modell}
     \subsubsection{Application Layer}
+    \label{subsubsection:TCP_application_layer}
     Umfasst alle Protokolle die mit Anwendungsprogrammen zusammenarbeiten und Netzwerke zum Datenaustausch nutzen.
-    \begin{enumerate}
-        \item NFS -- Network File System: Rechnerverbindungen, virtuelle Verbindung zwischen Festplatten.
-        \item DNS -- Domain Name System: Umsetzung zwischen Domainnamen und IP-Addressen.
-        \item SMTP -- Simple Mail Transfer Protocol: E-Mail Versand
-        \item FTP -- File Transfer Protocol: Dateien externer Rechner übertragen, löschen, ändern oder umbenennen. Ports 20, 21.
-        \item Telnet: Remote login via Terminal, TCP-Port 23
-        \item IMAP -- Internet Message Access Protocol: Zugriff auf E-Mail
-        \item POP3 -- Post Office Protocol V3: E-Mail Abruf
-        \item Sowie: HTTPS, NTP, RTP, SNMP, SSH
-    \end{enumerate}
+    \begin{description}
+        \item [NFS] -- Network File System: Rechnerverbindungen, virtuelle Verbindung zwischen Festplatten,
+        \item [DNS] -- Domain Name System: Umsetzung zwischen Domainnamen und IP-Addressen,
+        \item [SMTP] -- Simple Mail Transfer Protocol: E-Mail Versand,
+        \item [FTP] -- File Transfer Protocol: Dateien externer Rechner übertragen, löschen, ändern oder umbenennen. Ports 20, 21,
+        \item [Telnet] Remote login via Terminal, TCP-Port 23,
+        \item [IMAP] -- Internet Message Access Protocol: Zugriff auf E-Mail,
+        \item [POP3] -- Post Office Protocol V3: E-Mail Abruf,
+        \item [HTTPS]
+        \item [NTP]
+        \item [RTP]
+        \item [SNMP]
+        \item [SSH]
+    \end{description}
     
     \subsubsection{Transportlayer}
+    \label{subsubsection:TCP_transport_layer}
     Behandelt End-to-End-Kommunikation. Nutzt TCP als auch UDP zum Datenaustausch. 
     
     \subsubsection{Vermittlungsschicht (IP)}
     Umfasst die Weitervermittlungen von Paketen sowie Routing durch das Web, ermöglicht durch IP. Dual-Stacks erkennen Ipv4 oder Ipv6.
 
     \subsubsection{Network Layer}
+    \label{subsubsection:TCP_network_layer}
     Festlegung von Datentransfer: Der Host muss einem Netzwerk zugehören.
     Es gilt allumfassend als Schicht zur Punkt-zu-Punkt-Datenübertragung.
     \begin{enumerate}
-        \item Ethernet mit CSMA/CD: IEEE 802.3!
-        \item Token Bus - IEEE 802.4
-        \item Token Ring - IEEE 802.5
-        \item WLAN: IEEE 802.11
-        \item ARP -- Adress Resolution Protocol: Adressumsetzung zwischen IP und MAC
-    \item RARP -- Reverse Adress Resolution Protocol, deprecated.
-    \item PPP: Point-to-Point Protocol        
+        \item Ethernet mit CSMA/CD: IEEE 802.3!,
+        \item Token Bus - IEEE 802.4,
+        \item Token Ring - IEEE 802.5,
+        \item WLAN: IEEE 802.11,
+        \item ARP -- Adress Resolution Protocol: Adressumsetzung zwischen IP und MAC,
+        \item RARP -- Reverse Adress Resolution Protocol, deprecated,
+        \item PPP: Point-to-Point Protocol.
     \end{enumerate}
     \subsection{Networklayer -- Data Plane and Control Plane}
     Man differenziert den Network Layer grundlegend in Data Plane und Control Plane.
