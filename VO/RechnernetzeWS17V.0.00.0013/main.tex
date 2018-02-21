@@ -41,7 +41,7 @@
     \end{center}
     \subsection{OSI-Modell}
     \subsubsection{Application Layer}
-    \label{subsubsection:OSI_application_layer}
+    \label{OSI:application_layer}
     Im OSI-Modell dient der Application Layer dem Userinterface. Es handled I/O, bietet Userfunktionen und initiiert Verbindungen zu unterliegenden Schichten.
     Bsp.: Webbrowser, E-Mail Dienste, Instant Messaging.
     \paragraph{Protokolle:}
@@ -54,7 +54,7 @@
         \item IMAP.
     \end{itemize}
     \subsubsection{Presentation Layer}
-    \label{subsubsection:OSI_presentation_layer}
+    \label{OSI:presentation_layer}
     Wandelt systemabhängige Daten (ASCII, EBCDIC) in systemunabhängige Datenformate (ASN.1) um oder behandelt Datenkompression und Verschlüsselung.
     
     \paragraph{Protokolle:}
@@ -66,7 +66,7 @@
     \end{itemize}
 
     \subsubsection{Session Layer}
-    \label{subsubsection:OSI_session_layer}
+    \label{OSI:session_layer}
     Steuert Verbindungen in Form von Prozesskommunikation zweier Systeme, zum Datenaustausch. 
     Es handelt sich hierbei um einen semi-permanenten Dialog bestehend aus Anfragen und Antworten.
 
@@ -83,8 +83,9 @@
         \item Real-Time Transport Control Protocol, 
         \item Session Control Protocol.
     \end{itemize}
+
     \subsubsection{Transport Layer}
-    \label{subsubsection:OSI_transport_layer}
+    \label{OSI:transport_layer}
     In TCP/IP als auch im OSI-Modell: Realisiert Verbindung zwischen Quell-, und Zielhost mittels TCP und UDP. 
     Es dient dem Zuordnen von Datenpaketen zu einer spezifischen Anwendung.
     \begin{center}
@@ -108,7 +109,7 @@
     \end{description}
 
     \subsubsection{Network Layer}
-    \label{subsubsection:OSI_network_layer}
+    \label{OSI:network_layer}
     Implementiert Internet Protocol, IP. Die Zustellung der Daten zum richtigen Empfänger ist die Aufgabe von IP, e.g. das Routing, in sowohl leitungsorientierten als auch paketorientierten Verbindungen. 
     Zudem das Bereitstellen netzwerkübergreifender Adressen, Aktualisierung von Routingtabellen und Fragmentierung von Datenpaketen. 
     \begin{description}
@@ -121,7 +122,7 @@
     \end{description}
 
     \subsubsection{Data Link Layer}
-    \label{subsubsection:OSI_data_link_layer}
+    \label{OSI:data_link_layer}
     Segmentiert Pakete in Frames und checkt Prüfsummen. 
     Man prüft die fehlerfreie Übertragung als auch Zugriff auf Übertragungsmedium, 
     Bridge und/oder Switch. Nach IEEE ist sie in Logical Link Control und MAC aufgeteilt (In der VO: Data Plane, Control Plane). 
@@ -134,13 +135,13 @@
     \end{enumerate}
 
     \subsubsection{Physical Layer}
-    \label{subsubsection:OSI_physical_layer}
+    \label{OSI:physical_layer}
     Wandelt Bits in ein angemessenes Signal zur Übertragung um und handled physikalische Übertragungsmöglichkeiten. 
     Behandelt die unterliegenste Hardware: Repeater, Hubs, Leitungen, Stecker usw.
     
     \subsection{TCP-IP Modell}
     \subsubsection{Application Layer}
-    \label{subsubsection:TCP_application_layer}
+    \label{TCP/IP:application_layer}
     Umfasst alle Protokolle die mit Anwendungsprogrammen zusammenarbeiten und Netzwerke zum Datenaustausch nutzen.
     \begin{description}
         \item [NFS] -- Network File System: Rechnerverbindungen, virtuelle Verbindung zwischen Festplatten,
@@ -158,16 +159,16 @@
     \end{description}
     
     \subsubsection{Transportlayer}
-    \label{subsubsection:TCP_transport_layer}
+    \label{TCP/IP:transport_layer}
     Behandelt End-to-End-Kommunikation. Nutzt TCP als auch UDP zum Datenaustausch. 
     
     \subsubsection{Vermittlungsschicht (IP)}
-    \label{subsubsection:TCP_ip_layer}
+    \label{TCP/IP:ip_layer}
     Umfasst die Weitervermittlungen von Paketen sowie Routing durch das Web, ermöglicht durch IP. 
-    Dual-Stacks erkennen Ipv4 oder Ipv6.
+    Dual-Stacks erkennen IPv4 oder IPv6.
 
     \subsubsection{Network Layer}
-    \label{subsubsection:TCP_network_layer}
+    \label{TCP/IP:network_layer}
     Festlegung von Datentransfer: Der Host muss einem Netzwerk zugehören.
     Es gilt allumfassend als Schicht zur Punkt-zu-Punkt-Datenübertragung.
     \begin{enumerate}
@@ -181,7 +182,7 @@
     \end{enumerate}
 
     \subsection{Networklayer -- Data Plane and Control Plane}
-    \label{subsection:data_plane_and_control_plane}
+    \label{TCP/IP:data_plane_and_control_plane}
     Man differenziert den Network Layer grundlegend zwischen \textbf{Data Plane} und \textbf{Control Plane}.
     Der \textbf{Dataplane} beschreibt alles rund um den lokalen Router, 
     während der \textbf{Control Plane} das gesamte Netzwerk betrachtet.
@@ -191,7 +192,7 @@
     
 \section{Wichtige Protokolle}   
     \subsection{DHCP}
-    \label{subsection:protocols_dhcp}
+    \label{protocols:dhcp}
     Das Dynamic Host Configurations Protocol dient einem jeden Gerät sich an das Internet zu verbinden. 
     Es ist teil der Anwendungsschicht. 
     DHCP wird primär verwendet, wenn ein Gerät zu einem neuen System angeschlossen wird.
@@ -202,12 +203,14 @@
     $\rightarrow$ DNS (IPs) \& ARP (MACs) resolve following adresses.
     
     \subsection{HTTP}
-    \label{subsection:protocols_http}
+    \label{protocols:http}
     Das Hyper Text Transfer Protokol ist ein zustandsloses Protokoll zur Datenübertragung auf der Anwendungsschicht. 
     Es gilt dabei Dokumente in einen Webbrowser zu laden.
     \begin{description}
-        \item [HTTP/1.0] Bei HTTP/1.0 wird vor jeder Anfrage eine neue TCP-Verbindung aufgebaut und nach der Datenübertragung wieder geschlossen. Hier müssen per geladenem Element 1 Verbindung aufgebaut werden.
-        \item [HTTP/1.1] In HTTP/1.1 kann der Klient durch den KeepAlive Headereintrag die Verbindung aufrecht erhalten. Mithilfe von HTTP-Pipelining kann somit mittels einer einzigen TCP-Verbindung alle Elemente eines Dokumentes anfordern. Dies fürt zu Performanzsteigerungen.
+        \item [HTTP/1.0] Bei HTTP/1.0 wird vor jeder Anfrage eine neue TCP-Verbindung aufgebaut und nach der Datenübertragung wieder geschlossen. 
+        Hier müssen per geladenem Element eine Verbindung aufgebaut werden.
+        \item [HTTP/1.1] In HTTP/1.1 kann der Client durch den KeepAlive Headereintrag die Verbindung aufrecht erhalten. 
+        Mithilfe von HTTP-Pipelining kann somit mittels einer einzigen TCP-Verbindung alle Elemente eines Dokumentes anfordern. Dies fürt zu Performanzsteigerungen.
         
         Hinzu kommt der PUT-Befehl, womit man dem Server Daten senden kann, der DELETE-Befehl um diese Daten wieder zu löschen und eine TRACE-Methode zum Tracking von Packeten zum Server. 
         \item [HTTP/2.0] HTTP/2.0 bietet das Zusammenfassen mehrerer Anfragen (Multiplexing), Datenkompressionsmöglichkeiten (HPACK), Inhaltsübertragung in Binärform und Push-Verfahren, Serverseitig initiierte Datenübertragung.
@@ -216,7 +219,7 @@
     
     
     \subsection{FTP}
-    \label{subsection:protocols_ftp}
+    \label{protocols:ftp}
     Das File Transfer Protokol ist ein zustandsbehaftetes Protokol zum Datentransfer über IP-Netzwerke. 
     FTP ist Teil der Anwendungsschicht.
     Man soll mithilfe von FTP den Datenaustausch vom Server zum Client, 
@@ -229,12 +232,16 @@
     \end{center}
     
     Man unterscheidet zwischen Aktivem FTP und Passivem FTP:\\
-    \textbf{Aktives FTP} wird vom Klienten mithilfe von PORT und EPRT initiiert und man unterscheidet wie oben beschrieben den Befehlskanal und den Datenkanal.\\
-\textbf{Passives FTP} wird via PASV und EPSV Befehlen gestartet. Dieser Modus wird genutzt, wenn keine direkte Verbindung zum Klienten aufgebaut werden kann, etwas aufgrund einer Firewall oder Adressumschreibungen via NAT.
+    \textbf{Aktives FTP} wird vom Clienten mithilfe von PORT und EPRT initiiert und man unterscheidet wie oben beschrieben den Befehlskanal und den Datenkanal.\\
+\textbf{Passives FTP} wird via PASV und EPSV Befehlen gestartet. 
+Dieser Modus wird genutzt, wenn keine direkte Verbindung zum Clienten aufgebaut werden kann, etwas aufgrund einer Firewall oder Adressumschreibungen via NAT.
     
     \subsection{SMTP}
-    Das Simple Mail Transfer Protocol dient dem Austausch von Emails, primär jedoch zum Senden und Weiterleiten -- Zum Empfangen dieser dient üblicherweise POP3 oder IMAP.
-    SMTP-Server liegen üblicherweise auf Port 25 oder 587 für authentifizierte Mails.
+    \label{protocols:smtp}
+    Das Simple Mail Transfer Protocol dient dem Austausch von Emails, 
+    primär jedoch zum Senden und Weiterleiten 
+    -- Zum Empfangen dieser dient üblicherweise POP3 oder IMAP.
+    SMTP-Server liegen üblicherweise auf \textbf{Port 25} oder \textbf{587} für authentifizierte Mails.
     
     Normalerweise wird SMTP vom Mail User Agent ausgeführt, welcher sich zum SMTP-Server verbindet und dann dem Nutzer die Mails weiterleitet:
     
@@ -243,46 +250,65 @@
             Client              &   Server          &                                   \\\hline
             telnet x.y.z 25     &                   & Der User Agent ruft auf           \\
                                 &   220 Ready       & Server Meldet sich                \\
-            EHLO Oi             &                   & Klient identifiziert sich         \\
+            EHLO Oi             &                   & Client identifiziert sich         \\
                                 &   250 OK          & Server bestätigt                  \\
-            MAIL FROM: <@.org>  &                   & Klient definiert Absenderadresse  \\
+            MAIL FROM: <@.org>  &                   & Client definiert Absenderadresse  \\
                                 &   250 OK          & Server bestätigt                  \\
-            RCPT TO: <@.org>    &                   & Klient definiert Empfängeradresse \\  
+            RCPT TO: <@.org>    &                   & Client definiert Empfängeradresse \\  
                                 &   250 OK          & Server bestätigt                  \\
-            DATA                &                   & Klient initiiert die Email selbst \\
+            DATA                &                   & Client initiiert die Email selbst \\
                             &   354 Start Input &                                   \\
             (MailInput)         &                   & Die Email wird geschrieben. Ein '.' beendet die Email.  \\
                                 &   250 OK          & Server bestätigt die EMail.       \\ 
-            QUIT                &                   & Klient initiiert Verbindungsabbau \\
+            QUIT                &                   & Client initiiert Verbindungsabbau \\
                                 &   221 Closing     & Verbindung ist terminiert.    \\
         \end{tabular}
     \end{center}
     
-    \subsection{POP3}
+    \subsection{Post Office Protokil (POP3)}
+    \label{protocols:pop3}
     Das Post Office Protokol 3 dient dem Empfangen von Daten auf dem lokalen Gerät.
     Es ist das minimalste Protokol, da es lediglich Auflisten, Abholen und Löschen implementiert. 
-    Im Gegensatz zu IMAP werden bei einem Pull-Request die Daten direkt vom Server gezogen, wo diese auch gelöscht werden. Zudem ist keine permanente Verbindung zum Server notwendig. Allerdings gibt es zwischen unterschiedlichen Mailclients keine einheitliche Synchronisierung -- Wird eine Mail gelesen, so können andere Klienten diese Information nicht erhalten.
+    Im Gegensatz zu IMAP werden bei einem Pull-Request die Daten direkt vom Server gezogen, 
+    wo diese auch gelöscht werden. Zudem ist keine permanente Verbindung zum Server notwendig. 
+    Allerdings gibt es zwischen unterschiedlichen Mailclients keine einheitliche Synchronisierung -- Wird eine Mail gelesen, so können andere Klienten diese Information nicht erhalten.
 
     Um bei POP3 Datensicherheit zu gewährleisten wird APOP implementiert und/oder mittels SSL/TLS verschlüsselt. 
 
+    Encryptete Kommunikation via POP3 wird entweder nach der Protocol Initiierung (durch Verwenden des STLS Kommandos) angefordert, 
+    oder mit \textbf{POP3S}, welches sich zum Server mit \textbf{Transport Layer Security (TLS)} oder \textbf{Secure Sockets Layer (SSL)} am TCP Port 995 verbindet.
+    
     Befehle: USER, PASS, STAT, LIST, RETR, DELE, NOOP, RSET, QUIT.
 
-    \subsection{IMAP}
-    Das Internet Message Access Protocol dient dem Aufruf von Emails. Es erweitert POP3 um Userdefinierte Konfigurationen des Mailservers. Bei einem Serverzugriff werden Kopien der Mails dem Server entnommen, um Datenverlust vorzubeugen.
-    Der Datentransfer verläuft wie folgt:
+    \subsection{Internet Message Access Protocol (IMAP)}
+    \label{protocols:imap}
+    Bei dem Internet Message Access Protocol handelt es sich um ein Internet Standard Protocol, 
+    dass von E-Mail Clients verwendet wird, 
+    um E-Mail Nachrichten von einem Mail Server über eine TCP/IP Verbindung zu erhalten.
+
+    Es erweitert POP3 um Userdefinierte Konfigurationen des Mailservers. 
+    Bei einem Serverzugriff werden Kopien der Mails dem Server entnommen, 
+    um Datenverlust vorzubeugen.
+    Daher werden im Gegensatz zur POP3 Standard Konfigurationen E-Mails am Server gelassen,
+    außer der User löscht diese explizit.
+
+    Mittels einer \textbf{SSL Verbindung} kann über IMAPS eine sichere Verbindung erstellt werden.
+
+    \paragraph{Der Datentransfer verläuft wie folgt:}
     \begin{verbatim}
-    -- Der Server begrüßt den Klienten
-    -- Der Klient authentifiziert sich
-    -- Der Server bestätigt
-    -- Der Klient gibt einen Befehl ein (z.B. 'select Inbox')
-    -- Der Server gibt Daten über vorhandene und gelesene Mails wieder
-    -- Der Klient pullt die Mails oder Informationen
-    -- Der Server beantwortet je nach Befehl mit angefordertem Datensatz
-    -- ... Der Klient meldet sich ab
+    -- Der Server begrüßt den Clienten.
+    -- Der Client authentifiziert sich.
+    -- Der Server bestätigt.
+    -- Der Client gibt einen Befehl ein (z.B. 'select Inbox').
+    -- Der Server gibt Daten über vorhandene und gelesene Mails wieder.
+    -- Der Client pullt die Mails oder Informationen.
+    -- Der Server beantwortet je nach Befehl mit angefordertem Datensatz.
+    -- ... Der Client meldet sich ab.
     -- Server terminiert die Verbindung.
     \end{verbatim}
     
     \subsection{SNMP}
+    \label{protocols:snmp}
     Das Simple Network Management Protocol dient der zentralen Überwachung und Steuerung von Geräten innerhalb eines Netzwerkes, als auch Fehlererkennung und -benachrichtigung. Es gilt daher als Protokol der Anwendungsschicht.
     
     SNMP Agents empfangen an den jeweiligen Geräten die Befehle: GET-REQUEST, GETNEXT-REQUEST, GETBULK, SET-REQUEST, GET-RESPONSE, INFORM-REQUEST und Trap.
@@ -292,15 +318,17 @@
     Sicherheitsprobleme: SNMP unterstützt keine Anmeldung mit Kennwort und Usernamen -- Es werden lediglich Communities zum Management verwendet, etwa PUBLIC (read-only) und PRIVATE(read-write).
     
     \subsection{DNS}
+    \label{protocols:dns}
     Der Domain Name Service bietet in Netzwerken die Namensauflösung der IPs und ist Teil des Application Layers -- Nicht zu verwechseln mit ARP/RARP im Link Layer.
     Ähnlich einem Telefonbuch wird bei einer Anfrage ermittelt wo die angeforderte IP liegt und übermittelt.
 
     Während DNS dezentral aufgebaut ist, gelten hierarchische Strukturierungen, in Form eines Baumes:
     \begin{center}
         \includegraphics[width=\textwidth]{DNSNameSpace.png}\\
-        \textit{Man iteriert von oben nach unten}
+        \textit{Man iteriert von oben nach unten}.
     \end{center}
-    Eine komplette Domain besteht aus der Konkatinierung aller Labels eines spezifischen Pfades. Die Adresse 'de.sharelatex.com' wäre beispielsweise
+    Eine komplette Domain besteht aus der Konkatinierung aller Labels eines spezifischen Pfades. 
+    Die Adresse 'de.sharelatex.com' wäre beispielsweise:
     \begin{verbatim}
          .
          |
@@ -359,10 +387,10 @@
     
     \textit{Merkmale}:
     \begin{enumerate}
-        \item Full Duplex Data -- Bidirectional Dataflows
+        \item Full Duplex Data -- Bidirectional Dataflows.
         \item Connection-oriented -- Initializes Channel before sending and terminates channel once everything's been sent.
         \item Flow Control: Receiver controls sending rate of the Sender -- Empfänger übermittelt Überlauf des Empfangsbuffers.
-        \item Congestion Control: Bei zuvielen Daten von zuvielen Quellen: Verwurf von Daten auf der Netzwerkschicht durch Bufferoverflow
+        \item Congestion Control: Bei zuvielen Daten von zuvielen Quellen: Verwurf von Daten auf der Netzwerkschicht durch Bufferoverflow.
         \begin{center}
             \includegraphics[width=\textwidth]{CongestionControl.png}
     \end{center}
@@ -370,8 +398,8 @@
     
     \textit{Wichtige Flags bei TCP}:
     \begin{enumerate}
-        \item SYN-Flag: Initiiere Channel
-        \item FIN-Flag: Terminiere Channel
+        \item SYN-Flag: Initiiere Channel,
+        \item FIN-Flag: Terminiere Channel,
         \item ACK-Flag: Authentifiziert die ACK.
     \end{enumerate}
     

@@ -23,8 +23,9 @@
 \contentsline {subsection}{\numberline {2.2}HTTP}{8}
 \contentsline {subsection}{\numberline {2.3}FTP}{9}
 \contentsline {subsection}{\numberline {2.4}SMTP}{10}
-\contentsline {subsection}{\numberline {2.5}POP3}{10}
-\contentsline {subsection}{\numberline {2.6}IMAP}{10}
+\contentsline {subsection}{\numberline {2.5}Post Office Protokil (POP3)}{10}
+\contentsline {subsection}{\numberline {2.6}Internet Message Access Protocol (IMAP)}{10}
+\contentsline {paragraph}{\nonumberline Der Datentransfer verl\IeC {\"a}uft wie folgt:}{11}
 \contentsline {subsection}{\numberline {2.7}SNMP}{11}
 \contentsline {subsection}{\numberline {2.8}DNS}{11}
 \contentsline {subsection}{\numberline {2.9}TCP}{13}

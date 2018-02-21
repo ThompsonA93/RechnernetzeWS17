@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.14)  20 FEB 2018 20:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.14)  21 FEB 2018 14:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -602,7 +602,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
  [4 <./tcp_ip_model.png (PNG copy)>] [5] [6] [7] [8]
-Overfull \hbox (8.08723pt too wide) in paragraph at lines 214--215
+Overfull \hbox (8.08723pt too wide) in paragraph at lines 217--218
 []\T1/cmr/m/n/10.95 GET, POST, HEAD, PUT, PATCH, DE-LE-TE, TRACE, OP-TI-ONS, CO
 NNECT. 
  []
@@ -611,25 +611,26 @@ NNECT.
 File: FTPConnectionBuildup.png Graphic file (type png)
 
 <use FTPConnectionBuildup.png>
-Package pdftex.def Info: FTPConnectionBuildup.png used on input line 227.
+Package pdftex.def Info: FTPConnectionBuildup.png used on input line 230.
 (pdftex.def)             Requested size: 209.12778pt x 251.06943pt.
  [9 <./FTPConnectionBuildup.png>]
-Overfull \hbox (67.37453pt too wide) in paragraph at lines 242--259
+Overfull \hbox (67.37453pt too wide) in paragraph at lines 249--266
  [] 
  []
 
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 273.
+[10]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 298.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [10]
-Overfull \hbox (25.56517pt too wide) in paragraph at lines 286--287
+)
+Overfull \hbox (25.56517pt too wide) in paragraph at lines 312--313
 \T1/cmr/m/n/10.95 rung von Ge-rä-ten in-ner-halb ei-nes Netz-wer-kes, als auch 
 Feh-ler-er-ken-nung und -benachrichtigung.
  []
 
 
-Overfull \hbox (37.92058pt too wide) in paragraph at lines 288--291
+Overfull \hbox (37.92058pt too wide) in paragraph at lines 314--317
 \T1/cmr/m/n/10.95 GETNEXT-REQUEST, GET-BULK, SET-REQUEST, GET-RESPONSE, INFORM-
 REQUEST
  []
@@ -637,29 +638,29 @@ REQUEST
 <DNSNameSpace.png, id=47, 1215.54124pt x 463.7325pt>
 File: DNSNameSpace.png Graphic file (type png)
  <use DNSNameSpace.png>
-Package pdftex.def Info: DNSNameSpace.png used on input line 300.
+Package pdftex.def Info: DNSNameSpace.png used on input line 327.
 (pdftex.def)             Requested size: 418.25555pt x 159.56332pt.
 
 [11] <DNSIterativeQuery.png, id=52, 264.99pt x 333.245pt>
 File: DNSIterativeQuery.png Graphic file (type png)
 
 <use DNSIterativeQuery.png>
-Package pdftex.def Info: DNSIterativeQuery.png used on input line 321.
+Package pdftex.def Info: DNSIterativeQuery.png used on input line 349.
 (pdftex.def)             Requested size: 167.29967pt x 210.39291pt.
 
 <DNSRecursiveQuery.png, id=53, 313.17pt x 384.43625pt>
 File: DNSRecursiveQuery.png Graphic file (type png)
 
 <use DNSRecursiveQuery.png>
-Package pdftex.def Info: DNSRecursiveQuery.png used on input line 321.
+Package pdftex.def Info: DNSRecursiveQuery.png used on input line 349.
 (pdftex.def)             Requested size: 167.29967pt x 205.37512pt.
 
-Underfull \hbox (badness 2884) in paragraph at lines 327--328
+Underfull \hbox (badness 2884) in paragraph at lines 355--356
 []\T1/cmr/m/n/10.95 Der Ser-ver fragt al-le dar-un-ter-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
@@ -668,42 +669,42 @@ g>] <CongestionControl.png, id=61, 1031.855pt x 495.8525pt>
 File: CongestionControl.png Graphic file (type png)
 
 <use CongestionControl.png>
-Package pdftex.def Info: CongestionControl.png used on input line 367.
+Package pdftex.def Info: CongestionControl.png used on input line 395.
 (pdftex.def)             Requested size: 418.25555pt x 200.98561pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 367--368
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 395--396
  [] 
  []
 
 <GoBackN.png, id=62, 974.64125pt x 413.545pt>
 File: GoBackN.png Graphic file (type png)
  <use GoBackN.png>
-Package pdftex.def Info: GoBackN.png used on input line 380.
+Package pdftex.def Info: GoBackN.png used on input line 408.
 (pdftex.def)             Requested size: 418.25555pt x 177.4675pt.
  [14 <./CongestionControl.png>] <SelectiveRepeat.png, id=66, 647.41875pt x 458.
 71375pt>
 File: SelectiveRepeat.png Graphic file (type png)
 
 <use SelectiveRepeat.png>
-Package pdftex.def Info: SelectiveRepeat.png used on input line 383.
+Package pdftex.def Info: SelectiveRepeat.png used on input line 411.
 (pdftex.def)             Requested size: 418.25555pt x 296.34756pt.
  [15 <./GoBackN.png> <./SelectiveRepeat.png>]
 <BGP.png, id=70, 1105.12875pt x 359.3425pt>
 File: BGP.png Graphic file (type png)
  <use BGP.png>
-Package pdftex.def Info: BGP.png used on input line 415.
+Package pdftex.def Info: BGP.png used on input line 443.
 (pdftex.def)             Requested size: 418.25555pt x 135.99777pt.
  [16 <./BGP.png>]
 <Dijkstra.png, id=75, 1227.58624pt x 574.145pt>
 File: Dijkstra.png Graphic file (type png)
  <use Dijkstra.png>
-Package pdftex.def Info: Dijkstra.png used on input line 433.
+Package pdftex.def Info: Dijkstra.png used on input line 461.
 (pdftex.def)             Requested size: 418.25555pt x 195.61847pt.
 
 <DistanceVector.png, id=76, 927.465pt x 387.4475pt>
 File: DistanceVector.png Graphic file (type png)
  <use DistanceVector.png>
-Package pdftex.def Info: DistanceVector.png used on input line 439.
+Package pdftex.def Info: DistanceVector.png used on input line 467.
 (pdftex.def)             Requested size: 418.25555pt x 174.72812pt.
 
 [17 <./Dijkstra.png> <./DistanceVector.png>]
@@ -711,16 +712,16 @@ Package pdftex.def Info: DistanceVector.png used on input line 439.
 File: HierarchicalOSPF.png Graphic file (type png)
 
 <use HierarchicalOSPF.png>
-Package pdftex.def Info: HierarchicalOSPF.png used on input line 447.
+Package pdftex.def Info: HierarchicalOSPF.png used on input line 475.
 (pdftex.def)             Requested size: 418.25555pt x 261.08026pt.
 
 <SDNComponents.png, id=84, 360.34625pt x 463.7325pt>
 File: SDNComponents.png Graphic file (type png)
  <use SDNComponents.png>
-Package pdftex.def Info: SDNComponents.png used on input line 466.
+Package pdftex.def Info: SDNComponents.png used on input line 494.
 (pdftex.def)             Requested size: 125.47794pt x 161.47383pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 494--495
 
  []
 
@@ -728,75 +729,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 466--467
 <TDMACDMAFDMA.jpg, id=88, 493.3632pt x 178.266pt>
 File: TDMACDMAFDMA.jpg Graphic file (type jpg)
  <use TDMACDMAFDMA.jpg>
-Package pdftex.def Info: TDMACDMAFDMA.jpg used on input line 482.
+Package pdftex.def Info: TDMACDMAFDMA.jpg used on input line 510.
 (pdftex.def)             Requested size: 418.25555pt x 151.13239pt.
 
 [19 <./SDNComponents.png> <./TDMACDMAFDMA.jpg>]
 <Aloha.png, id=93, 1139.25626pt x 341.275pt>
 File: Aloha.png Graphic file (type png)
  <use Aloha.png>
-Package pdftex.def Info: Aloha.png used on input line 489.
+Package pdftex.def Info: Aloha.png used on input line 517.
 (pdftex.def)             Requested size: 418.25555pt x 125.29077pt.
 
 <CSMACD.png, id=94, 644.4075pt x 572.1375pt>
 File: CSMACD.png Graphic file (type png)
  <use CSMACD.png>
-Package pdftex.def Info: CSMACD.png used on input line 501.
+Package pdftex.def Info: CSMACD.png used on input line 529.
 (pdftex.def)             Requested size: 418.25555pt x 371.36116pt.
  [20 <./Aloha.png>] <CSMACA.png, id=98, 831.105pt x 515.9275pt>
 File: CSMACA.png Graphic file (type png)
  <use CSMACA.png>
-Package pdftex.def Info: CSMACA.png used on input line 513.
+Package pdftex.def Info: CSMACA.png used on input line 541.
 (pdftex.def)             Requested size: 418.25555pt x 259.63994pt.
  [21 <./CSMACD.png>]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: $\bullet $ on input line 535.
+             The label is: $\bullet $ on input line 563.
 
 [22 <./CSMACA.png>] <Topologie_Chain.png, id=106, 207.77625pt x 25.09375pt>
 File: Topologie_Chain.png Graphic file (type png)
 
 <use Topologie_Chain.png>
-Package pdftex.def Info: Topologie_Chain.png used on input line 546.
+Package pdftex.def Info: Topologie_Chain.png used on input line 574.
 (pdftex.def)             Requested size: 207.77573pt x 25.09367pt.
  <Topologie_Ring.png, id=107, 93.34875pt x 96.36pt>
 File: Topologie_Ring.png Graphic file (type png)
 
 <use Topologie_Ring.png>
-Package pdftex.def Info: Topologie_Ring.png used on input line 546.
+Package pdftex.def Info: Topologie_Ring.png used on input line 574.
 (pdftex.def)             Requested size: 93.34851pt x 96.35974pt.
 
 <Topologie_Star.png, id=108, 103.38625pt x 106.3975pt>
 File: Topologie_Star.png Graphic file (type png)
 
 <use Topologie_Star.png>
-Package pdftex.def Info: Topologie_Star.png used on input line 548.
+Package pdftex.def Info: Topologie_Star.png used on input line 576.
 (pdftex.def)             Requested size: 103.38599pt x 106.39723pt.
  <Topologie_Tree.png, id=109, 128.48pt x 91.34125pt>
 File: Topologie_Tree.png Graphic file (type png)
 
 <use Topologie_Tree.png>
-Package pdftex.def Info: Topologie_Tree.png used on input line 548.
+Package pdftex.def Info: Topologie_Tree.png used on input line 576.
 (pdftex.def)             Requested size: 128.47968pt x 91.34102pt.
  <Topologie_Mesh.png, id=110, 112.42pt x 92.345pt>
 File: Topologie_Mesh.png Graphic file (type png)
 
 <use Topologie_Mesh.png>
-Package pdftex.def Info: Topologie_Mesh.png used on input line 550.
+Package pdftex.def Info: Topologie_Mesh.png used on input line 578.
 (pdftex.def)             Requested size: 112.41972pt x 92.34476pt.
 
 <Topologie_Fabric.png, id=111, 132.495pt x 89.33376pt>
 File: Topologie_Fabric.png Graphic file (type png)
 
 <use Topologie_Fabric.png>
-Package pdftex.def Info: Topologie_Fabric.png used on input line 550.
+Package pdftex.def Info: Topologie_Fabric.png used on input line 578.
 (pdftex.def)             Requested size: 132.49466pt x 89.33353pt.
  [23]
 <CircuitSwitching.png, id=115, 551.05875pt x 573.14125pt>
 File: CircuitSwitching.png Graphic file (type png)
 
 <use CircuitSwitching.png>
-Package pdftex.def Info: CircuitSwitching.png used on input line 560.
+Package pdftex.def Info: CircuitSwitching.png used on input line 588.
 (pdftex.def)             Requested size: 167.29967pt x 173.99887pt.
  [24 <./Topologie_Chain.png> <./Topologie_Ring.png> <./Topologie_Star.png> <./T
 opologie_Tree.png> <./Topologie_Mesh.png> <./Topologie_Fabric.png>]
@@ -804,7 +805,7 @@ opologie_Tree.png> <./Topologie_Mesh.png> <./Topologie_Fabric.png>]
 File: PacketSwitchingStatistical.png Graphic file (type png)
 
 <use PacketSwitchingStatistical.png>
-Package pdftex.def Info: PacketSwitchingStatistical.png used on input line 563.
+Package pdftex.def Info: PacketSwitchingStatistical.png used on input line 591.
 
 (pdftex.def)             Requested size: 292.7776pt x 154.40965pt.
 
@@ -812,140 +813,140 @@ Package pdftex.def Info: PacketSwitchingStatistical.png used on input line 563.
 File: PacketSwitchingSF.png Graphic file (type png)
 
 <use PacketSwitchingSF.png>
-Package pdftex.def Info: PacketSwitchingSF.png used on input line 566.
+Package pdftex.def Info: PacketSwitchingSF.png used on input line 594.
 (pdftex.def)             Requested size: 334.60571pt x 63.77148pt.
  [25 <./CircuitSwitching.png> <./PacketSwitchingStatistical.png> <./PacketSwitc
 hingSF.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 590--593
+Underfull \hbox (badness 10000) in paragraph at lines 618--621
 
  []
 
 [26]
 File: Dijkstra.png Graphic file (type png)
  <use Dijkstra.png>
-Package pdftex.def Info: Dijkstra.png used on input line 636.
+Package pdftex.def Info: Dijkstra.png used on input line 664.
 (pdftex.def)             Requested size: 418.25555pt x 195.61847pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 636--636
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 664--664
  [] 
  []
 
 File: DistanceVector.png Graphic file (type png)
 <use DistanceVector.png>
-Package pdftex.def Info: DistanceVector.png used on input line 641.
+Package pdftex.def Info: DistanceVector.png used on input line 669.
 (pdftex.def)             Requested size: 418.25555pt x 174.72812pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 641--641
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 669--669
  [] 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 647--653
+Underfull \hbox (badness 10000) in paragraph at lines 675--681
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--656
+Underfull \hbox (badness 10000) in paragraph at lines 682--684
 
  []
 
 [28]
-Overfull \hbox (9.28224pt too wide) in paragraph at lines 667--670
+Overfull \hbox (9.28224pt too wide) in paragraph at lines 695--698
 \T1/cmr/m/n/10.95 IPv4>:<16-Bit Net-work>::/64 Die voll-stän-di-ge IPv6-Adresse
  lau-tet 2002:C0A8:6301::1/64.
  []
 
 [29] [30] [31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 845--846
+Underfull \hbox (badness 10000) in paragraph at lines 873--874
 
  []
 
 
-Overfull \hbox (16.29214pt too wide) in paragraph at lines 867--870
+Overfull \hbox (16.29214pt too wide) in paragraph at lines 895--898
 \T1/cmr/m/n/10.95 erst mit Http/1.1 im-ple-men-tiert. Hier wird dem Ser-ver dur
 ch 'Keepalive'-Headereintrag
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 873--875
+Underfull \hbox (badness 10000) in paragraph at lines 901--903
 
  []
 
 <TCPHandshake.png, id=154, 1190.4475pt x 653.44125pt>
 File: TCPHandshake.png Graphic file (type png)
  <use TCPHandshake.png>
-Package pdftex.def Info: TCPHandshake.png used on input line 876.
+Package pdftex.def Info: TCPHandshake.png used on input line 904.
 (pdftex.def)             Requested size: 418.25555pt x 229.5753pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 876--877
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 904--905
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 879--880
+Underfull \hbox (badness 10000) in paragraph at lines 907--908
 
  []
 
 <TCPShutdown.png, id=155, 1149.29375pt x 646.415pt>
 File: TCPShutdown.png Graphic file (type png)
  <use TCPShutdown.png>
-Package pdftex.def Info: TCPShutdown.png used on input line 881.
+Package pdftex.def Info: TCPShutdown.png used on input line 909.
 (pdftex.def)             Requested size: 418.25555pt x 235.24414pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 881--882
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 909--910
  [] 
  []
 
 [35 <./TCPHandshake.png>]
 
-LaTeX Warning: Command \" invalid in math mode on input line 908.
+LaTeX Warning: Command \" invalid in math mode on input line 936.
 
 Missing character: There is no ü in font cmr10!
 
-Overfull \hbox (19.94206pt too wide) in paragraph at lines 908--909
+Overfull \hbox (19.94206pt too wide) in paragraph at lines 936--937
 \T1/cmr/m/n/10.95 Die zu ver-ge-ben-den Ho-st-adres-sen be-rech-net sich mit $\
 OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 AnzahlanBitsfrHostadresse\OT1/cmr/m/n/
 10.95 ) \OMS/cmsy/m/n/10.95 ^^@
  []
 
 [36 <./TCPShutdown.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 910--915
+Underfull \hbox (badness 10000) in paragraph at lines 938--943
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 916--918
+Underfull \hbox (badness 10000) in paragraph at lines 944--946
 
  []
 
 <IPv6Subnetze.png, id=162, 593.21625pt x 465.74pt>
 File: IPv6Subnetze.png Graphic file (type png)
  <use IPv6Subnetze.png>
-Package pdftex.def Info: IPv6Subnetze.png used on input line 923.
+Package pdftex.def Info: IPv6Subnetze.png used on input line 951.
 (pdftex.def)             Requested size: 418.25555pt x 328.38939pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 923--924
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 951--952
  [] 
  []
 
 [37] [38 <./IPv6Subnetze.png>] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 974--975
+Underfull \hbox (badness 10000) in paragraph at lines 1002--1003
 
  []
 
 <TDMAvsFDMA.png, id=173, 620.3175pt x 299.1175pt>
 File: TDMAvsFDMA.png Graphic file (type png)
  <use TDMAvsFDMA.png>
-Package pdftex.def Info: TDMAvsFDMA.png used on input line 980.
+Package pdftex.def Info: TDMAvsFDMA.png used on input line 1008.
 (pdftex.def)             Requested size: 334.60571pt x 161.3476pt.
 
-Overfull \hbox (50.47244pt too wide) in paragraph at lines 986--986
+Overfull \hbox (50.47244pt too wide) in paragraph at lines 1014--1014
  []\T1/cmtt/m/n/10.95 https://www.taitradioacademy.com/topic/the-difference-bet
 ween-fdma-and-tdma-1/ 
  []
 
 
-Overfull \hbox (4.05524pt too wide) in paragraph at lines 992--994
+Overfull \hbox (4.05524pt too wide) in paragraph at lines 1020--1022
 \T1/cmr/m/n/10.95 Richtig, wo-bei es all-ge-mein den Pa-kettran-sit, durch Er-m
 it-teln des nächst-günstigsten
  []
@@ -955,25 +956,25 @@ it-teln des nächst-günstigsten
 File: SelectiveRepeat_Error.png Graphic file (type png)
 
 <use SelectiveRepeat_Error.png>
-Package pdftex.def Info: SelectiveRepeat_Error.png used on input line 1086.
+Package pdftex.def Info: SelectiveRepeat_Error.png used on input line 1114.
 (pdftex.def)             Requested size: 418.25555pt x 567.18578pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 1086--1087
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1114--1115
  [] 
  []
 
 [43] [44 <./SelectiveRepeat_Error.png>]
-Overfull \hbox (124.94806pt too wide) in paragraph at lines 1110--1110
+Overfull \hbox (124.94806pt too wide) in paragraph at lines 1138--1138
 []\T1/cmtt/m/n/10.95 - https://talvindersingh1992.wordpress.com/2013/07/07/mult
 iple-access-techniques-tdma-fdma-cdma/[] 
  []
 
 [45] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4610 strings out of 493014
- 75420 string characters out of 6133351
- 231848 words of memory out of 5000000
- 8051 multiletter control sequences out of 15000+600000
+ 4615 strings out of 493014
+ 75320 string characters out of 6133351
+ 231903 words of memory out of 5000000
+ 8056 multiletter control sequences out of 15000+600000
  14480 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,12n,51p,8652b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -992,7 +993,7 @@ usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></us
 r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/lo
 cal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on main.pdf (45 pages, 1860089 bytes).
+Output written on main.pdf (45 pages, 1863304 bytes).
 PDF statistics:
  243 PDF objects out of 1000 (max. 8388607)
  146 compressed objects within 2 object streams
