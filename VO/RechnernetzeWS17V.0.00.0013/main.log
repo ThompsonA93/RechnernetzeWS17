@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.14)  21 FEB 2018 14:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.2.22)  23 FEB 2018 06:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -8,57 +8,49 @@ ogramming/VO/RechnernetzeWS17/VO/RechnernetzeWS17V.0.00.0013/main.tex
 
 (/Users/christianbauer/Onedrive/Uni_Unterlagen/5_Semester/NetworksAndNetworkPro
 gramming/VO/RechnernetzeWS17/VO/RechnernetzeWS17V.0.00.0013/main.tex
-LaTeX2e <2016/03/31>
-Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/scrartcl.cls
-Document Class: scrartcl 2016/05/10 v3.20 KOMA-Script document class (article)
-(/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2016/05/10 v3.20 KOMA-Script package (KOMA-Script-dependent b
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Document Class: scrartcl 2017/09/07 v3.24 KOMA-Script document class (article)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-dependent b
 asics and keyval usage)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2016/05/10 v3.20 KOMA-Script package (KOMA-Script-independent 
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2017/09/07 v3.24 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2016/05/10 v3.20 KOMA-Script package (loading files)
-
-Package scrlfile, 2016/05/10 v3.20 KOMA-Script package (loading files)
-                  Copyright (C) Markus Kohm
-
-))) (/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2016/05/10 v3.20 KOMA-Script package (handling toc-files)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2017/09/07 v3.24 KOMA-Script package (loading files)
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2017/09/07 v3.24 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 130.
+(tocbasic)             for `toc' on input line 133.
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 131.
+(tocbasic)             for `lof' on input line 135.
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 132.
+(tocbasic)             for `lot' on input line 136.
 Class scrartcl Info: File `scrsize11pt.clo' used instead of
-(scrartcl)           file `scrsize11.clo' to setup font sizes on input line 205
-1.
+(scrartcl)           file `scrsize11.clo' to setup font sizes on input line 208
+0.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2016/05/10 v3.20 KOMA-Script font size class option (11pt
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+File: scrsize11pt.clo 2017/09/07 v3.24 KOMA-Script font size class option (11pt
 )
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/typearea.sty
-Package: typearea 2016/05/10 v3.20 KOMA-Script package (type area)
-
-Package typearea, 2016/05/10 v3.20 KOMA-Script package (type area)
-                  Copyright (C) Frank Neukam, 1992-1994
-                  Copyright (C) Markus Kohm, 1994-
-
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2017/09/07 v3.24 KOMA-Script package (type area)
 \ta@bcor=\skip42
 \ta@div=\count79
 \ta@hblk=\skip43
@@ -81,7 +73,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 47.6pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 1528.
+(typearea)              on input line 1686.
 )
 \c@part=\count80
 \c@section=\count81
@@ -95,28 +87,29 @@ Package typearea Info: These are the values describing the layout:
 \scr@dte@subsubsection@maxnumwidth=\skip50
 \scr@dte@paragraph@maxnumwidth=\skip51
 \scr@dte@subparagraph@maxnumwidth=\skip52
-LaTeX Info: Redefining \textsubscript on input line 4025.
+LaTeX Info: Redefining \textsubscript on input line 4161.
 \abovecaptionskip=\skip53
 \belowcaptionskip=\skip54
 \c@pti@nb@sid@b@x=\box27
 \c@figure=\count86
 \c@table=\count87
-Class scrartcl Info: Redefining `\numberline' on input line 5012.
+Class scrartcl Info: Redefining `\numberline' on input line 5319.
 \bibindent=\dimen102
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -328,6 +321,8 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
    defining Unicode char U+1E02 (decimal 7682)
    defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
@@ -348,12 +343,14 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -393,8 +390,8 @@ File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -417,32 +414,37 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2016/04/23 3.9r The Babel package
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/babel-german/naustrian.ldf
-Language: naustrian 2013/12/13 v2.7 German support for babel (new orthography)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel-german/naustrian.ldf
+Language: naustrian 2016/11/02 v2.9 German support for babel (new orthography)
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/babel-german/ngermanb.ldf
-Language: ngermanb 2013/12/13 v2.7 German support for babel (new orthography)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2016/11/02 v2.9 German support for babel (new orthography)
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2016/04/23 3.9r Babel common definitions
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count89
 )
 \l@naustrian = a dialect from \language\l@ngerman 
-\l@nswissgerman = a dialect from \language\l@ngerman 
-Package babel Info: Making " an active character on input line 88.
+Package babel Info: Making " an active character on input line 125.
 )))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/koma-script/scrextend.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/koma-script/scrextend.sty
 
 Package scrextend Warning: This package was made to extend other classes but
 (scrextend)                KOMA-Script classes by some features of the
@@ -450,39 +452,31 @@ Package scrextend Warning: This package was made to extend other classes but
 (scrextend)                It should never be used with a KOMA-Script class.
 (scrextend)                Loading of the package will be aborted.
 
-) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/enumerate.sty
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks17
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
-File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 96.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count89
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks18
 \verbatim@line=\toks19
@@ -490,20 +484,20 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
 
-(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count90
 \scratchdimen=\dimen106
@@ -516,62 +510,71 @@ LaTeX Font Info:    ... okay on input line 31.
 \MPnumerator=\count94
 \makeMPintoPDFobject=\count95
 \everyMPtoPDFconversion=\toks21
-) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
-)
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 33.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 34.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmss.fd
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 33.
+(Font)              <14.4> on input line 34.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 33.
+(Font)              <7> on input line 34.
  (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
@@ -583,420 +586,623 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
 
-[2] [3] <tcp_ip_model.png, id=17, 1121.18875pt x 573.14125pt>
+[2] [3]
+<tcp_ip_model.png, id=17, 1121.18875pt x 573.14125pt>
 File: tcp_ip_model.png Graphic file (type png)
-
 <use tcp_ip_model.png>
-Package pdftex.def Info: tcp_ip_model.png used on input line 40.
+Package pdftex.def Info: tcp_ip_model.png  used on input line 41.
 (pdftex.def)             Requested size: 418.25555pt x 213.80801pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 50.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
  [4 <./tcp_ip_model.png (PNG copy)>] [5] [6] [7] [8]
-Overfull \hbox (8.08723pt too wide) in paragraph at lines 217--218
+Overfull \hbox (8.08723pt too wide) in paragraph at lines 226--227
 []\T1/cmr/m/n/10.95 GET, POST, HEAD, PUT, PATCH, DE-LE-TE, TRACE, OP-TI-ONS, CO
 NNECT. 
  []
 
 <FTPConnectionBuildup.png, id=38, 360.34625pt x 432.61626pt>
 File: FTPConnectionBuildup.png Graphic file (type png)
-
 <use FTPConnectionBuildup.png>
-Package pdftex.def Info: FTPConnectionBuildup.png used on input line 230.
+Package pdftex.def Info: FTPConnectionBuildup.png  used on input line 240.
 (pdftex.def)             Requested size: 209.12778pt x 251.06943pt.
- [9 <./FTPConnectionBuildup.png>]
-Overfull \hbox (67.37453pt too wide) in paragraph at lines 249--266
+[9 <./FTPConnectionBuildup.png>]
+Overfull \hbox (67.37453pt too wide) in paragraph at lines 259--276
  [] 
  []
 
 [10]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 298.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 308.
 
- (/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1cmtt.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Overfull \hbox (25.56517pt too wide) in paragraph at lines 312--313
+Overfull \hbox (25.56517pt too wide) in paragraph at lines 322--323
 \T1/cmr/m/n/10.95 rung von Ge-rä-ten in-ner-halb ei-nes Netz-wer-kes, als auch 
 Feh-ler-er-ken-nung und -benachrichtigung.
  []
 
-
-Overfull \hbox (37.92058pt too wide) in paragraph at lines 314--317
-\T1/cmr/m/n/10.95 GETNEXT-REQUEST, GET-BULK, SET-REQUEST, GET-RESPONSE, INFORM-
-REQUEST
- []
-
-<DNSNameSpace.png, id=47, 1215.54124pt x 463.7325pt>
+[11]
+<DNSNameSpace.png, id=51, 1215.54124pt x 463.7325pt>
 File: DNSNameSpace.png Graphic file (type png)
- <use DNSNameSpace.png>
-Package pdftex.def Info: DNSNameSpace.png used on input line 327.
+<use DNSNameSpace.png>
+Package pdftex.def Info: DNSNameSpace.png  used on input line 346.
 (pdftex.def)             Requested size: 418.25555pt x 159.56332pt.
-
-[11] <DNSIterativeQuery.png, id=52, 264.99pt x 333.245pt>
+ [12 <./DNSNameSpace.png>]
+<DNSIterativeQuery.png, id=55, 264.99pt x 333.245pt>
 File: DNSIterativeQuery.png Graphic file (type png)
-
 <use DNSIterativeQuery.png>
-Package pdftex.def Info: DNSIterativeQuery.png used on input line 349.
+Package pdftex.def Info: DNSIterativeQuery.png  used on input line 368.
 (pdftex.def)             Requested size: 167.29967pt x 210.39291pt.
-
-<DNSRecursiveQuery.png, id=53, 313.17pt x 384.43625pt>
+<DNSRecursiveQuery.png, id=56, 313.17pt x 384.43625pt>
 File: DNSRecursiveQuery.png Graphic file (type png)
-
 <use DNSRecursiveQuery.png>
-Package pdftex.def Info: DNSRecursiveQuery.png used on input line 349.
+Package pdftex.def Info: DNSRecursiveQuery.png  used on input line 368.
 (pdftex.def)             Requested size: 167.29967pt x 205.37512pt.
 
-Underfull \hbox (badness 2884) in paragraph at lines 355--356
+Underfull \hbox (badness 2884) in paragraph at lines 374--375
 []\T1/cmr/m/n/10.95 Der Ser-ver fragt al-le dar-un-ter-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
 
  []
 
-[12 <./DNSNameSpace.png>] [13 <./DNSIterativeQuery.png> <./DNSRecursiveQuery.pn
-g>] <CongestionControl.png, id=61, 1031.855pt x 495.8525pt>
+[13 <./DNSIterativeQuery.png> <./DNSRecursiveQuery.png>] [14]
+<CongestionControl.png, id=64, 1031.855pt x 495.8525pt>
 File: CongestionControl.png Graphic file (type png)
-
 <use CongestionControl.png>
-Package pdftex.def Info: CongestionControl.png used on input line 395.
+Package pdftex.def Info: CongestionControl.png  used on input line 431.
 (pdftex.def)             Requested size: 418.25555pt x 200.98561pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 395--396
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 431--432
  [] 
  []
 
-<GoBackN.png, id=62, 974.64125pt x 413.545pt>
+[15 <./CongestionControl.png>]
+<GoBackN.png, id=68, 974.64125pt x 413.545pt>
 File: GoBackN.png Graphic file (type png)
- <use GoBackN.png>
-Package pdftex.def Info: GoBackN.png used on input line 408.
-(pdftex.def)             Requested size: 418.25555pt x 177.4675pt.
- [14 <./CongestionControl.png>] <SelectiveRepeat.png, id=66, 647.41875pt x 458.
-71375pt>
+<use GoBackN.png>
+Package pdftex.def Info: GoBackN.png  used on input line 474.
+(pdftex.def)             Requested size: 334.60571pt x 141.97273pt.
+<SelectiveRepeat.png, id=69, 647.41875pt x 458.71375pt>
 File: SelectiveRepeat.png Graphic file (type png)
-
 <use SelectiveRepeat.png>
-Package pdftex.def Info: SelectiveRepeat.png used on input line 411.
-(pdftex.def)             Requested size: 418.25555pt x 296.34756pt.
- [15 <./GoBackN.png> <./SelectiveRepeat.png>]
-<BGP.png, id=70, 1105.12875pt x 359.3425pt>
+Package pdftex.def Info: SelectiveRepeat.png  used on input line 494.
+(pdftex.def)             Requested size: 334.60571pt x 237.07664pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16 <./GoBackN.png>] [17 <./SelectiveRepeat.png>]
+<BGP.png, id=77, 1105.12875pt x 359.3425pt>
 File: BGP.png Graphic file (type png)
- <use BGP.png>
-Package pdftex.def Info: BGP.png used on input line 443.
+<use BGP.png>
+Package pdftex.def Info: BGP.png  used on input line 540.
 (pdftex.def)             Requested size: 418.25555pt x 135.99777pt.
- [16 <./BGP.png>]
-<Dijkstra.png, id=75, 1227.58624pt x 574.145pt>
+<Dijkstra.png, id=78, 1227.58624pt x 574.145pt>
 File: Dijkstra.png Graphic file (type png)
- <use Dijkstra.png>
-Package pdftex.def Info: Dijkstra.png used on input line 461.
+<use Dijkstra.png>
+Package pdftex.def Info: Dijkstra.png  used on input line 558.
 (pdftex.def)             Requested size: 418.25555pt x 195.61847pt.
-
-<DistanceVector.png, id=76, 927.465pt x 387.4475pt>
+ [18 <./BGP.png>]
+<DistanceVector.png, id=83, 927.465pt x 387.4475pt>
 File: DistanceVector.png Graphic file (type png)
- <use DistanceVector.png>
-Package pdftex.def Info: DistanceVector.png used on input line 467.
+<use DistanceVector.png>
+Package pdftex.def Info: DistanceVector.png  used on input line 564.
 (pdftex.def)             Requested size: 418.25555pt x 174.72812pt.
-
-[17 <./Dijkstra.png> <./DistanceVector.png>]
-<HierarchicalOSPF.png, id=83, 812.03375pt x 506.89375pt>
+<HierarchicalOSPF.png, id=84, 812.03375pt x 506.89375pt>
 File: HierarchicalOSPF.png Graphic file (type png)
-
 <use HierarchicalOSPF.png>
-Package pdftex.def Info: HierarchicalOSPF.png used on input line 475.
+Package pdftex.def Info: HierarchicalOSPF.png  used on input line 572.
 (pdftex.def)             Requested size: 418.25555pt x 261.08026pt.
-
-<SDNComponents.png, id=84, 360.34625pt x 463.7325pt>
+ [19 <./Dijkstra.png> <./DistanceVector.png>]
+<SDNComponents.png, id=91, 360.34625pt x 463.7325pt>
 File: SDNComponents.png Graphic file (type png)
- <use SDNComponents.png>
-Package pdftex.def Info: SDNComponents.png used on input line 494.
+<use SDNComponents.png>
+Package pdftex.def Info: SDNComponents.png  used on input line 591.
 (pdftex.def)             Requested size: 125.47794pt x 161.47383pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
+Underfull \hbox (badness 10000) in paragraph at lines 591--592
 
  []
 
-[18 <./HierarchicalOSPF.png>]
-<TDMACDMAFDMA.jpg, id=88, 493.3632pt x 178.266pt>
+[20 <./HierarchicalOSPF.png> <./SDNComponents.png>]
+<TDMACDMAFDMA.jpg, id=95, 493.3632pt x 178.266pt>
 File: TDMACDMAFDMA.jpg Graphic file (type jpg)
- <use TDMACDMAFDMA.jpg>
-Package pdftex.def Info: TDMACDMAFDMA.jpg used on input line 510.
+<use TDMACDMAFDMA.jpg>
+Package pdftex.def Info: TDMACDMAFDMA.jpg  used on input line 607.
 (pdftex.def)             Requested size: 418.25555pt x 151.13239pt.
-
-[19 <./SDNComponents.png> <./TDMACDMAFDMA.jpg>]
-<Aloha.png, id=93, 1139.25626pt x 341.275pt>
+<Aloha.png, id=96, 1139.25626pt x 341.275pt>
 File: Aloha.png Graphic file (type png)
- <use Aloha.png>
-Package pdftex.def Info: Aloha.png used on input line 517.
+<use Aloha.png>
+Package pdftex.def Info: Aloha.png  used on input line 614.
 (pdftex.def)             Requested size: 418.25555pt x 125.29077pt.
-
-<CSMACD.png, id=94, 644.4075pt x 572.1375pt>
+ [21 <./TDMACDMAFDMA.jpg> <./Aloha.png>]
+<CSMACD.png, id=100, 644.4075pt x 572.1375pt>
 File: CSMACD.png Graphic file (type png)
- <use CSMACD.png>
-Package pdftex.def Info: CSMACD.png used on input line 529.
+<use CSMACD.png>
+Package pdftex.def Info: CSMACD.png  used on input line 626.
 (pdftex.def)             Requested size: 418.25555pt x 371.36116pt.
- [20 <./Aloha.png>] <CSMACA.png, id=98, 831.105pt x 515.9275pt>
+ [22 <./CSMACD.png>]
+<CSMACA.png, id=105, 831.105pt x 515.9275pt>
 File: CSMACA.png Graphic file (type png)
- <use CSMACA.png>
-Package pdftex.def Info: CSMACA.png used on input line 541.
+<use CSMACA.png>
+Package pdftex.def Info: CSMACA.png  used on input line 638.
 (pdftex.def)             Requested size: 418.25555pt x 259.63994pt.
- [21 <./CSMACD.png>]
+ [23 <./CSMACA.png>]
 
 LaTeX Warning: The counter will not be printed.
-             The label is: $\bullet $ on input line 563.
+             The label is: $\bullet $ on input line 660.
 
-[22 <./CSMACA.png>] <Topologie_Chain.png, id=106, 207.77625pt x 25.09375pt>
+<Topologie_Chain.png, id=109, 207.77625pt x 25.09375pt>
 File: Topologie_Chain.png Graphic file (type png)
-
 <use Topologie_Chain.png>
-Package pdftex.def Info: Topologie_Chain.png used on input line 574.
+Package pdftex.def Info: Topologie_Chain.png  used on input line 671.
 (pdftex.def)             Requested size: 207.77573pt x 25.09367pt.
- <Topologie_Ring.png, id=107, 93.34875pt x 96.36pt>
+<Topologie_Ring.png, id=110, 93.34875pt x 96.36pt>
 File: Topologie_Ring.png Graphic file (type png)
-
 <use Topologie_Ring.png>
-Package pdftex.def Info: Topologie_Ring.png used on input line 574.
+Package pdftex.def Info: Topologie_Ring.png  used on input line 671.
 (pdftex.def)             Requested size: 93.34851pt x 96.35974pt.
-
-<Topologie_Star.png, id=108, 103.38625pt x 106.3975pt>
+<Topologie_Star.png, id=111, 103.38625pt x 106.3975pt>
 File: Topologie_Star.png Graphic file (type png)
-
 <use Topologie_Star.png>
-Package pdftex.def Info: Topologie_Star.png used on input line 576.
+Package pdftex.def Info: Topologie_Star.png  used on input line 673.
 (pdftex.def)             Requested size: 103.38599pt x 106.39723pt.
- <Topologie_Tree.png, id=109, 128.48pt x 91.34125pt>
+<Topologie_Tree.png, id=112, 128.48pt x 91.34125pt>
 File: Topologie_Tree.png Graphic file (type png)
-
 <use Topologie_Tree.png>
-Package pdftex.def Info: Topologie_Tree.png used on input line 576.
+Package pdftex.def Info: Topologie_Tree.png  used on input line 673.
 (pdftex.def)             Requested size: 128.47968pt x 91.34102pt.
- <Topologie_Mesh.png, id=110, 112.42pt x 92.345pt>
+<Topologie_Mesh.png, id=113, 112.42pt x 92.345pt>
 File: Topologie_Mesh.png Graphic file (type png)
-
 <use Topologie_Mesh.png>
-Package pdftex.def Info: Topologie_Mesh.png used on input line 578.
+Package pdftex.def Info: Topologie_Mesh.png  used on input line 675.
 (pdftex.def)             Requested size: 112.41972pt x 92.34476pt.
-
-<Topologie_Fabric.png, id=111, 132.495pt x 89.33376pt>
+<Topologie_Fabric.png, id=114, 132.495pt x 89.33376pt>
 File: Topologie_Fabric.png Graphic file (type png)
-
 <use Topologie_Fabric.png>
-Package pdftex.def Info: Topologie_Fabric.png used on input line 578.
+Package pdftex.def Info: Topologie_Fabric.png  used on input line 675.
 (pdftex.def)             Requested size: 132.49466pt x 89.33353pt.
- [23]
-<CircuitSwitching.png, id=115, 551.05875pt x 573.14125pt>
+[24]
+<CircuitSwitching.png, id=118, 551.05875pt x 573.14125pt>
 File: CircuitSwitching.png Graphic file (type png)
-
 <use CircuitSwitching.png>
-Package pdftex.def Info: CircuitSwitching.png used on input line 588.
+Package pdftex.def Info: CircuitSwitching.png  used on input line 685.
 (pdftex.def)             Requested size: 167.29967pt x 173.99887pt.
- [24 <./Topologie_Chain.png> <./Topologie_Ring.png> <./Topologie_Star.png> <./T
+ [25 <./Topologie_Chain.png> <./Topologie_Ring.png> <./Topologie_Star.png> <./T
 opologie_Tree.png> <./Topologie_Mesh.png> <./Topologie_Fabric.png>]
-<PacketSwitchingStatistical.png, id=119, 732.7375pt x 386.44376pt>
+<PacketSwitchingStatistical.png, id=123, 732.7375pt x 386.44376pt>
 File: PacketSwitchingStatistical.png Graphic file (type png)
-
 <use PacketSwitchingStatistical.png>
-Package pdftex.def Info: PacketSwitchingStatistical.png used on input line 591.
-
+Package pdftex.def Info: PacketSwitchingStatistical.png  used on input line 688
+.
 (pdftex.def)             Requested size: 292.7776pt x 154.40965pt.
-
-<PacketSwitchingSF.png, id=120, 447.6725pt x 85.31876pt>
+<PacketSwitchingSF.png, id=124, 447.6725pt x 85.31876pt>
 File: PacketSwitchingSF.png Graphic file (type png)
-
 <use PacketSwitchingSF.png>
-Package pdftex.def Info: PacketSwitchingSF.png used on input line 594.
+Package pdftex.def Info: PacketSwitchingSF.png  used on input line 691.
 (pdftex.def)             Requested size: 334.60571pt x 63.77148pt.
- [25 <./CircuitSwitching.png> <./PacketSwitchingStatistical.png> <./PacketSwitc
-hingSF.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 618--621
+
+[26 <./CircuitSwitching.png> <./PacketSwitchingStatistical.png> <./PacketSwitch
+ingSF.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 715--718
 
  []
 
-[26]
+[27]
 File: Dijkstra.png Graphic file (type png)
- <use Dijkstra.png>
-Package pdftex.def Info: Dijkstra.png used on input line 664.
+<use Dijkstra.png>
+Package pdftex.def Info: Dijkstra.png  used on input line 761.
 (pdftex.def)             Requested size: 418.25555pt x 195.61847pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 664--664
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 761--761
  [] 
  []
 
 File: DistanceVector.png Graphic file (type png)
 <use DistanceVector.png>
-Package pdftex.def Info: DistanceVector.png used on input line 669.
+Package pdftex.def Info: DistanceVector.png  used on input line 766.
 (pdftex.def)             Requested size: 418.25555pt x 174.72812pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 669--669
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 766--766
  [] 
  []
 
-[27]
-Underfull \hbox (badness 10000) in paragraph at lines 675--681
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 682--684
-
- []
-
 [28]
-Overfull \hbox (9.28224pt too wide) in paragraph at lines 695--698
+Underfull \hbox (badness 10000) in paragraph at lines 772--778
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--781
+
+ []
+
+[29]
+Overfull \hbox (9.28224pt too wide) in paragraph at lines 792--795
 \T1/cmr/m/n/10.95 IPv4>:<16-Bit Net-work>::/64 Die voll-stän-di-ge IPv6-Adresse
  lau-tet 2002:C0A8:6301::1/64.
  []
 
-[29] [30] [31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 873--874
+[30] [31] [32]
+Overfull \hbox (18.77429pt too wide) in paragraph at lines 915--916
+[]\T1/cmr/m/n/10.95 Implemented as dis-tri-bu-ted sys-tem for per-fo-man-ce, sc
+a-la-bi-li-ty, fault-tolerance,
+ []
+
+[33] [34] [35]
+Underfull \hbox (badness 10000) in paragraph at lines 1005--1006
 
  []
 
 
-Overfull \hbox (16.29214pt too wide) in paragraph at lines 895--898
+Overfull \hbox (16.29214pt too wide) in paragraph at lines 1027--1030
 \T1/cmr/m/n/10.95 erst mit Http/1.1 im-ple-men-tiert. Hier wird dem Ser-ver dur
 ch 'Keepalive'-Headereintrag
  []
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 901--903
+
+Underfull \hbox (badness 10000) in paragraph at lines 1033--1036
 
  []
 
-<TCPHandshake.png, id=154, 1190.4475pt x 653.44125pt>
+[36]
+<TCPHandshake.png, id=160, 1190.4475pt x 653.44125pt>
 File: TCPHandshake.png Graphic file (type png)
- <use TCPHandshake.png>
-Package pdftex.def Info: TCPHandshake.png used on input line 904.
+<use TCPHandshake.png>
+Package pdftex.def Info: TCPHandshake.png  used on input line 1037.
 (pdftex.def)             Requested size: 418.25555pt x 229.5753pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 904--905
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1037--1038
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--908
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1044
 
  []
 
-<TCPShutdown.png, id=155, 1149.29375pt x 646.415pt>
+<TCPShutdown.png, id=161, 1149.29375pt x 646.415pt>
 File: TCPShutdown.png Graphic file (type png)
- <use TCPShutdown.png>
-Package pdftex.def Info: TCPShutdown.png used on input line 909.
+<use TCPShutdown.png>
+Package pdftex.def Info: TCPShutdown.png  used on input line 1045.
 (pdftex.def)             Requested size: 418.25555pt x 235.24414pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 909--910
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1045--1046
  [] 
  []
 
-[35 <./TCPHandshake.png>]
+[37 <./TCPHandshake.png>] [38 <./TCPShutdown.png>]
 
-LaTeX Warning: Command \" invalid in math mode on input line 936.
+LaTeX Warning: Command \" invalid in math mode on input line 1079.
 
-Missing character: There is no ü in font cmr10!
+Missing character: There is no ü in font cmr8!
 
-Overfull \hbox (19.94206pt too wide) in paragraph at lines 936--937
-\T1/cmr/m/n/10.95 Die zu ver-ge-ben-den Ho-st-adres-sen be-rech-net sich mit $\
-OT1/cmr/m/n/10.95 2[]\OML/cmm/m/it/10.95 AnzahlanBitsfrHostadresse\OT1/cmr/m/n/
-10.95 ) \OMS/cmsy/m/n/10.95 ^^@
- []
-
-[36 <./TCPShutdown.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 938--943
+Underfull \hbox (badness 10000) in paragraph at lines 1083--1088
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--946
+Underfull \hbox (badness 10000) in paragraph at lines 1089--1091
 
  []
 
-<IPv6Subnetze.png, id=162, 593.21625pt x 465.74pt>
+<IPv6Subnetze.png, id=169, 593.21625pt x 465.74pt>
 File: IPv6Subnetze.png Graphic file (type png)
- <use IPv6Subnetze.png>
-Package pdftex.def Info: IPv6Subnetze.png used on input line 951.
+<use IPv6Subnetze.png>
+Package pdftex.def Info: IPv6Subnetze.png  used on input line 1096.
 (pdftex.def)             Requested size: 418.25555pt x 328.38939pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 951--952
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1096--1097
  [] 
  []
 
-[37] [38 <./IPv6Subnetze.png>] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1002--1003
+[39] [40 <./IPv6Subnetze.png>] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 1147--1148
 
  []
 
-<TDMAvsFDMA.png, id=173, 620.3175pt x 299.1175pt>
+<TDMAvsFDMA.png, id=179, 620.3175pt x 299.1175pt>
 File: TDMAvsFDMA.png Graphic file (type png)
- <use TDMAvsFDMA.png>
-Package pdftex.def Info: TDMAvsFDMA.png used on input line 1008.
+<use TDMAvsFDMA.png>
+Package pdftex.def Info: TDMAvsFDMA.png  used on input line 1153.
 (pdftex.def)             Requested size: 334.60571pt x 161.3476pt.
 
-Overfull \hbox (50.47244pt too wide) in paragraph at lines 1014--1014
- []\T1/cmtt/m/n/10.95 https://www.taitradioacademy.com/topic/the-difference-bet
-ween-fdma-and-tdma-1/ 
+Overfull \hbox (95.73941pt too wide) in paragraph at lines 1159--1159
+ []        \T1/cmtt/m/n/10.95 https://www.taitradioacademy.com/topic/the-differ
+ence-between-fdma-and-tdma-1/ 
  []
 
 
-Overfull \hbox (4.05524pt too wide) in paragraph at lines 1020--1022
+Overfull \hbox (4.05524pt too wide) in paragraph at lines 1165--1167
 \T1/cmr/m/n/10.95 Richtig, wo-bei es all-ge-mein den Pa-kettran-sit, durch Er-m
 it-teln des nächst-günstigsten
  []
 
-[40 <./TDMAvsFDMA.png>] [41] [42]
-<SelectiveRepeat_Error.png, id=183, 515.9275pt x 699.61375pt>
-File: SelectiveRepeat_Error.png Graphic file (type png)
+[42 <./TDMAvsFDMA.png>]
+Overfull \hbox (5.20547pt too wide) in paragraph at lines 1206--1206
+ []         \T1/cmtt/m/n/10.95 0                   1                   2       
+            3[] 
+ []
 
+
+Overfull \hbox (16.52222pt too wide) in paragraph at lines 1207--1207
+ []         \T1/cmtt/m/n/10.95 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 
+4 5 6 7 8 9 0 1[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1208--1208
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1209--1209
+ []        \T1/cmtt/m/n/10.95 |Version|  IHL  |Type of Service|          Total 
+Length         |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1210--1210
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1211--1211
+ []        \T1/cmtt/m/n/10.95 |         Identification        |Flags|      Frag
+ment Offset    |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1212--1212
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1213--1213
+ []        \T1/cmtt/m/n/10.95 |  Time to Live |    Protocol   |         Header 
+Checksum       |[] 
+ []
+
+[43]
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1214--1214
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1215--1215
+ []        \T1/cmtt/m/n/10.95 |                       Source Address           
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1216--1216
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1217--1217
+ []        \T1/cmtt/m/n/10.95 |                    Destination Address         
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1218--1218
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1219--1219
+ []        \T1/cmtt/m/n/10.95 |                    Options                    |
+    Padding    |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1220--1220
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (5.20547pt too wide) in paragraph at lines 1225--1225
+ []         \T1/cmtt/m/n/10.95 0                   1                   2       
+            3[] 
+ []
+
+
+Overfull \hbox (16.52222pt too wide) in paragraph at lines 1226--1226
+ []         \T1/cmtt/m/n/10.95 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 
+4 5 6 7 8 9 0 1[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1227--1227
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1228--1228
+ []        \T1/cmtt/m/n/10.95 |Version| Traffic Class |           Flow Label   
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1229--1229
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1230--1230
+ []        \T1/cmtt/m/n/10.95 |         Payload Length        |  Next Header  |
+   Hop Limit   |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1231--1231
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1232--1232
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1233--1233
+ []        \T1/cmtt/m/n/10.95 +                                                
+               +[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1234--1234
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1235--1235
+ []        \T1/cmtt/m/n/10.95 +                         Source Address         
+               +[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1236--1236
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1237--1237
+ []        \T1/cmtt/m/n/10.95 +                                                
+               +[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1238--1238
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1239--1239
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1240--1240
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1241--1241
+ []        \T1/cmtt/m/n/10.95 +                                                
+               +[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1242--1242
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1243--1243
+ []        \T1/cmtt/m/n/10.95 +                      Destination Address       
+               +[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1244--1244
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1245--1245
+ []        \T1/cmtt/m/n/10.95 +                                                
+               +[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1246--1246
+ []        \T1/cmtt/m/n/10.95 |                                                
+               |[] 
+ []
+
+
+Overfull \hbox (22.18059pt too wide) in paragraph at lines 1247--1247
+ []        \T1/cmtt/m/n/10.95 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+-+-+-+-+-+-+-+-+[] 
+ []
+
+[44]
+<SelectiveRepeat_Error.png, id=190, 515.9275pt x 699.61375pt>
+File: SelectiveRepeat_Error.png Graphic file (type png)
 <use SelectiveRepeat_Error.png>
-Package pdftex.def Info: SelectiveRepeat_Error.png used on input line 1114.
+Package pdftex.def Info: SelectiveRepeat_Error.png  used on input line 1259.
 (pdftex.def)             Requested size: 418.25555pt x 567.18578pt.
 
-Overfull \hbox (27.37506pt too wide) in paragraph at lines 1114--1115
+Overfull \hbox (27.37506pt too wide) in paragraph at lines 1259--1260
  [] 
  []
 
-[43] [44 <./SelectiveRepeat_Error.png>]
-Overfull \hbox (124.94806pt too wide) in paragraph at lines 1138--1138
+[45] [46 <./SelectiveRepeat_Error.png>]
+Overfull \hbox (124.94806pt too wide) in paragraph at lines 1283--1283
 []\T1/cmtt/m/n/10.95 - https://talvindersingh1992.wordpress.com/2013/07/07/mult
 iple-access-techniques-tdma-fdma-cdma/[] 
  []
 
-[45] (./main.aux) ) 
+[47] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4615 strings out of 493014
- 75320 string characters out of 6133351
- 231903 words of memory out of 5000000
- 8056 multiletter control sequences out of 15000+600000
+ 4772 strings out of 492982
+ 78853 string characters out of 6132527
+ 240512 words of memory out of 5000000
+ 8231 multiletter control sequences out of 15000+600000
  14480 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,12n,51p,8652b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super
-/cm-super-t1.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfbx109
-5.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1095.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on main.pdf (45 pages, 1863304 bytes).
+ 51i,12n,51p,8984b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/cm-super
+/cm-super-t1.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfbx109
+5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1095.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx1095.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb></
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></us
+r/local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/lo
+cal/texlive/2017/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on main.pdf (47 pages, 1870955 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
- 146 compressed objects within 2 object streams
+ 249 PDF objects out of 1000 (max. 8388607)
+ 150 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

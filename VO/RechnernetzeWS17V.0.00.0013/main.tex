@@ -6,9 +6,10 @@
     \usepackage{enumerate}
     \usepackage{graphicx}
     \usepackage{verbatim}
+  
 
     \title{Rechnernetze \& Netzwerkprogrammierung - VO-Vorbereitung}
-    \author{T. Auer} % Add your own shithole
+    \author{T. Auer, C. Bauer} % Add your own shithole
     \date{Latest Update: \today}
     
 % ----------------------------------------------------------------------------------------------
@@ -119,7 +120,10 @@
         \item [OSPF] -- Open Shortest Path First: Informationsaustausch zwischen Routern,
         \item [BGP] -- Border Gateway Protocol: Informationsaustausch zwischen autonomen Systemen,
         \item [IGMP] -- Internet Group Management: Definiert Multicast-Gruppen.
-    \end{description}
+          
+        \end{description}
+
+        
 
     \subsubsection{Data Link Layer}
     \label{OSI:data_link_layer}
@@ -142,7 +146,12 @@
     \subsection{TCP-IP Modell}
     \subsubsection{Application Layer}
     \label{TCP/IP:application_layer}
+    Das TCP/IP Modell hat keinen Session oder Presentation Layer. 
+    Somit inkludiert eine  Applikation beliebige Session oder Presentation Funktionen, die benötigt werden.
+    Der \emph{Application Layer} befindet sich über dem \emph{Transport Layer}.
+    
     Umfasst alle Protokolle die mit Anwendungsprogrammen zusammenarbeiten und Netzwerke zum Datenaustausch nutzen.
+
     \begin{description}
         \item [NFS] -- Network File System: Rechnerverbindungen, virtuelle Verbindung zwischen Festplatten,
         \item [DNS] -- Domain Name System: Umsetzung zwischen Domainnamen und IP-Addressen,
@@ -162,7 +171,7 @@
     \label{TCP/IP:transport_layer}
     Behandelt End-to-End-Kommunikation. Nutzt TCP als auch UDP zum Datenaustausch. 
     
-    \subsubsection{Vermittlungsschicht (IP)}
+    \subsubsection{Vermittlungsschicht (Internet Layer - IP)}
     \label{TCP/IP:ip_layer}
     Umfasst die Weitervermittlungen von Paketen sowie Routing durch das Web, ermöglicht durch IP. 
     Dual-Stacks erkennen IPv4 oder IPv6.
@@ -217,7 +226,8 @@
         \item [Befehle] GET, POST, HEAD, PUT, PATCH, DELETE, TRACE, OPTIONS, CONNECT.
     \end{description}
     
-    
+ 
+
     \subsection{FTP}
     \label{protocols:ftp}
     Das File Transfer Protokol ist ein zustandsbehaftetes Protokol zum Datentransfer über IP-Netzwerke. 
@@ -265,7 +275,7 @@ Dieser Modus wird genutzt, wenn keine direkte Verbindung zum Clienten aufgebaut 
         \end{tabular}
     \end{center}
     
-    \subsection{Post Office Protokil (POP3)}
+    \subsection{Post Office Protokol (POP3)}
     \label{protocols:pop3}
     Das Post Office Protokol 3 dient dem Empfangen von Daten auf dem lokalen Gerät.
     Es ist das minimalste Protokol, da es lediglich Auflisten, Abholen und Löschen implementiert. 
@@ -307,17 +317,26 @@ Dieser Modus wird genutzt, wenn keine direkte Verbindung zum Clienten aufgebaut 
     -- Server terminiert die Verbindung.
     \end{verbatim}
     
-    \subsection{SNMP}
+    \subsection{Simple Network Management Protocol (SNMP)}
     \label{protocols:snmp}
     Das Simple Network Management Protocol dient der zentralen Überwachung und Steuerung von Geräten innerhalb eines Netzwerkes, als auch Fehlererkennung und -benachrichtigung. Es gilt daher als Protokol der Anwendungsschicht.
     
-    SNMP Agents empfangen an den jeweiligen Geräten die Befehle: GET-REQUEST, GETNEXT-REQUEST, GETBULK, SET-REQUEST, GET-RESPONSE, INFORM-REQUEST und Trap.
+    \paragraph{SNMP Agents empfangen an den jeweiligen Geräten die Befehle:} 
+    \begin{itemize}
+        \item GET-REQUEST,
+        \item GETNEXT-REQUEST,
+        \item GETBULK,
+        \item SET-REQUEST,
+        \item GET-RESPONSE,
+        \item INFORM-REQUEST,
+        \item Trap.
+    \end{itemize}
     Die 3 Get-Befehlspakete können vom Manager zu einem Agenten gesendet werden, um Daten anzufordern. Die Antwort erfolgt mittels Response-Paket.
     Mittels SET können Agenten konfiguriert werden.
     
     Sicherheitsprobleme: SNMP unterstützt keine Anmeldung mit Kennwort und Usernamen -- Es werden lediglich Communities zum Management verwendet, etwa PUBLIC (read-only) und PRIVATE(read-write).
     
-    \subsection{DNS}
+    \subsection{Domain Name Service (DNS)}
     \label{protocols:dns}
     Der Domain Name Service bietet in Netzwerken die Namensauflösung der IPs und ist Teil des Application Layers -- Nicht zu verwechseln mit ARP/RARP im Link Layer.
     Ähnlich einem Telefonbuch wird bei einer Anfrage ermittelt wo die angeforderte IP liegt und übermittelt.
@@ -359,75 +378,153 @@ Dieser Modus wird genutzt, wenn keine direkte Verbindung zum Clienten aufgebaut 
     
     Für gewöhnlich werden Einträge von IPs in den jeweiligen Zonen unterscheidet.
 
-    \subsection{TCP}
-    Das Transmission Control Protokol arbeitet auf der Transportschicht und dient der Datenübertragung. TCP implementiert den sog. 'Handshake', wobei ein sicherer Datenübertragungkanal zwischen Server und Klient aufgebaut wird. Es gilt als Stop-and-wait Protokol.
+    \pagebreak
+    \subsection{Transmission Control Protocol (TCP)}
+    \label{protocols:tcp}
+    Das Transmission Control Protokol arbeitet auf der Transportschicht und dient der Datenübertragung. 
+    TCP implementiert den sog. 'Handshake', 
+    wobei ein sicherer Datenübertragungkanal zwischen Server und Client aufgebaut wird. 
     
-    \textit{Struktur des TCP-Segmentes}
+    Dabei bietet TCP eine verlässliche,
+    geordnete und auf Fehler überprüfte Übertragung eines Streams von \emph{Octets (Byte)} zwischen Applikationen
+    von Host Systemen, die via einen IP Netzwerk miteinander kommunizieren.
+    Es gilt als Stop-and-wait Protokol.
+    
+    \paragraph{Struktur des TCP-Segmentes:}
+   
     \begin{verbatim}
-0                   1                   2                   3
-0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|          Source Port          |       Destination Port        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                        Sequence Number                        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Acknowledgment Number                      |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|  Data |           |U|A|P|R|S|F|                               |
-| Offset| Reserved  |R|C|S|S|Y|I|            Window             |
-|       |           |G|K|H|T|N|N|                               |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|           Checksum            |         Urgent Pointer        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Options                    |    Padding    |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                             data                              |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+        
+    0                   1                   2                   3
+    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |          Source Port          |       Destination Port        |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |                        Sequence Number                        |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |                    Acknowledgment Number                      |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |  Data |           |U|A|P|R|S|F|                               |
+    | Offset| Reserved  |R|C|S|S|Y|I|            Window             |
+    |       |           |G|K|H|T|N|N|                               |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |           Checksum            |         Urgent Pointer        |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |                    Options                    |    Padding    |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+    |                             data                              |
+    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+        
     \end{verbatim}
     
-    \textit{Merkmale}:
-    \begin{enumerate}
-        \item Full Duplex Data -- Bidirectional Dataflows.
-        \item Connection-oriented -- Initializes Channel before sending and terminates channel once everything's been sent.
-        \item Flow Control: Receiver controls sending rate of the Sender -- Empfänger übermittelt Überlauf des Empfangsbuffers.
-        \item Congestion Control: Bei zuvielen Daten von zuvielen Quellen: Verwurf von Daten auf der Netzwerkschicht durch Bufferoverflow.
+    \paragraph{Merkmale:}
+    \begin{description}
+        \item [Full Duplex Data] Bi-directional data flow in same connection.\\MSS: maximum segment size.
+        
+        \item [Connection-oriented] Initializes Channel before sending and terminates channel once everything's been sent.
+        \\Handshakeing (exchange of control messages).
+        
+        \item [Flow Control] Receiver controls sending rate of the Sender -- Empfänger übermittelt Überlauf des Empfangsbuffers.
+        \item [Congestion Control] Bei zuvielen Daten von zuvielen Quellen: Verwurf von Daten auf der Netzwerkschicht durch Bufferoverflow.
+        \item [Point-to-point] One sender, one receiver.
+        \item [Reliable, in-order byte stream] No message boundaries.
+        \item [Pipelined] TCP congestion and flow control set window size.
+        
         \begin{center}
             \includegraphics[width=\textwidth]{CongestionControl.png}
     \end{center}
-    \end{enumerate}
+    \end{description}
+
+    \paragraph{Flow Control:}
+    \label{protocols:TCP_flow_control}
+    \begin{itemize}
+        \item Der Empfänger zeig dem Sender das noch freier Buffer zur Verfügung steht, 
+        indem ein \texttt{rwnd} Wert im TCP Header mitgesendet wird.
+        \begin{itemize}
+            \item \texttt{RcvBuffer} Größe wird mittels einer Socket Option gesetzt (Defaultwert typischerweise 4096 bytes).
+            \item Viele OS setzen \texttt{RcvBuffer} automatisch.
+        \end{itemize}
+    \end{itemize}
+
+
+    \paragraph{Congestion Control:}
+    \label{protocols:TCP_congestion_control}
+    \begin{itemize}
+        \item Informally: "too many sources sending too much data too fast for network to handle."
+        \item Different from flow control!
+        \item Manifestations:
+        \begin{itemize}
+            \item Lost packets (buffer overflow at routers).
+            \item Long delays (queueing in router buffers).
+        \end{itemize}
+        \item A top-10 problem!
+    \end{itemize}
     
-    \textit{Wichtige Flags bei TCP}:
-    \begin{enumerate}
-        \item SYN-Flag: Initiiere Channel,
-        \item FIN-Flag: Terminiere Channel,
-        \item ACK-Flag: Authentifiziert die ACK.
-    \end{enumerate}
+    \paragraph{Wichtige Flags bei TCP:}
+    
+    \begin{description}
+        \item [SYN-Flag] Initiiere Channel,
+        \item [FIN-Flag] Terminiere Channel,
+        \item [ACK-Flag] Authentifiziert die ACK.
+    \end{description}
     
     TCP im großem Ausmaß wird üblicherweise via Go-Back-N oder Selective Repeat implementiert.
-    \begin{center}
-        \includegraphics[width=\textwidth]{GoBackN.png}
-    \end{center}
-    \begin{center}
-        \includegraphics[width=\textwidth]{SelectiveRepeat.png}
-    \end{center}
+    
+    \paragraph{G-Back-N (GBN)}
+    \begin{figure}[h!]
+        \centering
+        \caption{G-Back-N}
+        \includegraphics[width=0.8\textwidth]{GoBackN.png}
+    \end{figure}
+
+    \begin{itemize}
+        \item Der Sender kann bis zu $N$ \textbf{unack'ed Pakete} in der Pipeline haben.
+        \item Der Empfänger sendet nur ein kumulatives \textbf{ack} 
+        \begin{itemize}
+            \item Wenn eine Lücke darin ist, wird kein \textbf{ack packet} gesendet.
+        \end{itemize}
+        \item Sender hat einen Timer für das älteste \emph{unack} Paket.
+        \begin{itemize}
+            \item Wenn der Timer ausläuft, werden alle \emph{unack} Pakete wiedergesendet.
+        \end{itemize}
+    \end{itemize}
+    
+    
+    \paragraph{Selective Repeat}
+    \begin{figure}[h!]
+        \centering
+        \caption{Selective Repeat}
+        \includegraphics[width=0.8\textwidth]{SelectiveRepeat.png}
+    \end{figure}
+  
+    \begin{itemize}
+        \item Der Empfänger sendet individuelle acknowlegdes für jedes korrekt erhaltene Paket. 
+        \begin{itemize}
+            \item Buffered die Pakete, falls notwendig, für eventuelle \emph{in-order delivery} an den upper layer.
+        \end{itemize}
+        \item Der Sender muss nur die Pakete wieder senden, für welche das ACK noch nicht erhalten wurde.
+        \begin{itemize}
+            \item Daher ein Sender Timer für jedes unACK'ed Paket.
+        \end{itemize}
+        
+    \end{itemize}
 
     \subsection{UDP}
+    \label{protocols:udp}
     UDP ist im Grunde das Gegenstück zu TCP: Verbindungsfreie Datenübertragung ohne Sicherheiten, Zustandslose, jedoch weitaus schneller als TCP, aufgrund des fehlenden Overheads durch den Handshake und mit kleinerem Header.
     
-    \textit{UDP-Struktur}:
+    \paragraph{UDP-Struktur:}
+    
     \begin{verbatim}
-0       7 8     15 16    23 24    31  
-+--------+--------+--------+--------+ 
-|     Source      |   Destination   | 
-|      Port       |      Port       | 
-+--------+--------+--------+--------+ 
-|                 |                 | 
-|     Length      |    Checksum     | 
-+--------+--------+--------+--------+ 
-|                                     
-|              Payload 
-|           e.g. AppData
-+---------------- ...                 
+        0       7 8     15 16    23 24    31  
+        +--------+--------+--------+--------+ 
+        |     Source      |   Destination   | 
+        |      Port       |      Port       | 
+        +--------+--------+--------+--------+ 
+        |                 |                 | 
+        |     Length      |    Checksum     | 
+        +--------+--------+--------+--------+ 
+        |                                     
+        |              Payload 
+        |           e.g. AppData
+        +---------------- ...                 
     \end{verbatim}
     $\rightarrow$ Daraus resultiert: Das kleinste UDP-Segment ist 8 Byte lang - Mit leerem Payload und den Headern zu je 2 Byte.
     
@@ -777,6 +874,12 @@ Alternativ ist auch der Distanz-Vektor Algorithmus anwendbar:
             \end{tabular}
         \end{center}
         \item Was ist der Unterschied zwischen Flow Control und Congestion Control?
+        \begin{itemize}
+            \item An allocation problem that occurs at every level is how to keep a fast sender from swamping a slow receiver with data.
+            \item Feedback from the receiver to the sender is often used. This subject is called \textbf{flow control}.
+            \item Sometimes the problem is that the network is oversubscribed because too many computers want to send too much traffic,
+            and the network cannot deliver it all. This overloading of the network is called \textbf{congestion}.
+        \end{itemize}
         \item Was sind die unterschiedlichen Elemente eines Wireless Networks und wie arbeiten sie miteinander?
         \item Was passiert wenn man innerhalb eines WLan-Netzwerkes den Standort wechselt? 
         \item Was sind die 5 Eckpfeiler des 5G Atoms und welche Teilbereiche gibt es?
@@ -789,7 +892,36 @@ Alternativ ist auch der Distanz-Vektor Algorithmus anwendbar:
         \item Welche Arten der Datenübertragungen gibt es und welche grundlegenden Protokolle werden dafür implementiert? 
         \textit{Tip: Uni-Cast sendet von 1 zu 1 weiterem.}
         \item Wie funktioniert SDN?
-        \item Was sind Grundfunktionalitäten der Applikationsschciht. Welche Protokolle werden hier implementiert?
+        \begin{itemize}
+            \item \textbf{Key Characteristics:}
+            \begin{itemize}
+                \item Flow-based forwarding,
+                \item Separation of data plane and control plane,
+                \item Network control functions: external to data plane switches,
+                \item A programmable network.
+            \end{itemize}
+            
+            \item \textbf{Network control applications:}
+            \begin{itemize}
+                \item Brains of control,
+                \item Unbundled: e.g., by 3rd party distinct from routing vendor or SND controller.
+            \end{itemize}
+
+            \item \textbf{SDN controller:}
+            \begin{itemize}
+                \item Maintain network state information,
+                \item Interacts wiht network control application above via northbound API,
+                \item Interacts with network switches below via southbound API,
+                \item Implemented as distributed system for perfomance, scalability, fault-tolerance, robustness.
+            \end{itemize}
+
+            \item \textbf{Implementations:}
+            \begin{itemize}
+                \item OpenFlow,
+                \item OpenDaylight.
+            \end{itemize}
+        \end{itemize}
+        \item Was sind Grundfunktionalitäten der Applikationsschicht. Welche Protokolle werden hier implementiert?
         \item Wie unterscheiden sich Data Plane und Control Plane? Gibt es unterschiedliche Variationen des Control Plane?
         \item Wie wird ein IPv6 Paket behandelt, sollte man lediglich IPv4 weitersenden können?
         \item Welche Versionen von HTTP existieren und was sind Unterschiede zwischen den einzelnen Versionstypen? Ist HTTP ein sicheres Protokoll?
@@ -899,12 +1031,16 @@ Host: www.campus.aau.at
 Siehe auch: https://tools.ietf.org/html/rfc7234}
         \end{verbatim}
         \item \textbf{Transportschicht}: Beschreibe und Skizziere die TCP-Verbindungsaufbau und TCP-Verbindungsabbau.\\
-        Der TCP-Verbindungsaufbau wird vom Klienten mittels der SYN-Flag initiiert. Erst mit einer Antwort des Server, mit SYN und ACK Flags, gilt die Verbindung als aufgebaut.\\
+        Der TCP-Verbindungsaufbau wird vom Klienten mittels der SYN-Flag initiiert. Erst mit einer Antwort des Server, 
+        mit SYN und ACK Flags, gilt die Verbindung als aufgebaut.\\
         \begin{center}
             \includegraphics[width=\textwidth]{TCPHandshake.png}
     \end{center}
         
-        Der Abbau geschieht mittels der FIN-Flag. Sobald der Klient die Verbindung schließen möchte, so wird die FIN-Flag gesetzt, wodurch der Klient keiner weiteren Daten schicken darf, jedoch noch empfangen kann. Die Verbindung ist dann abgebaut, wenn ein Klientseitiger Timer ausläuft oder die FIN-Flag seitens Server eintrifft.\\
+        Der Abbau geschieht mittels der FIN-Flag. Sobald der Klient die Verbindung schließen möchte, 
+        so wird die FIN-Flag gesetzt, 
+        wodurch der Client keiner weiteren Daten schicken darf, jedoch noch empfangen kann. 
+        Die Verbindung ist dann abgebaut, wenn ein Klientseitiger Timer ausläuft oder die FIN-Flag seitens Server eintrifft.\\
         \begin{center}
             \includegraphics[width=\textwidth]{TCPShutdown.png}
         \end{center}
@@ -913,12 +1049,19 @@ Siehe auch: https://tools.ietf.org/html/rfc7234}
         Nenne und beschreibe die drei Hauptfunktionen der Netzwerkschicht und nenne die zwei bekanntesten Routingalgorithmen.
         Die Netzwerkschicht, oder Networklayer, dient dem Forwarding, dem Routing und der Fragmentierung der Datenpakete in Frames.
         
-        Zu den bekannten Routingalgorithmen zählen der \textbf{Dijkstra-Algorithmus oder Link State} und der \textbf{Distance-Vector} 
+        \begin{description}
+            \item [Forwarding] How each router makes the decision as to where to send a packet next is called the \textbf{forwarding algorithm}.
+            \item [Routing] How the network makes the decision as to which path to use is called the \textbf{routing algorithm}.
+        \end{description}
+        
+        Zu den bekannten Routingalgorithmen zählen der \textbf{Dijkstra-Algorithmus oder Link State} und der \textbf{Distance-Vector}.
         
         \item \textbf{Netzwerkschicht}: Beschreibe IPv4 bzw. IPv6 und gehe auf Unterschiede ein und skizziere mögliche Ansätze zum Übergang von IPv4 und IPv6.
         IPv4 als auch IPv6 spezifiziert jedes Gerät anhand einer eindeutigen Adresse im jeweiligen Subnets.
         
-    Während IPv4 einen Adressbereich von $2^(32)$, oder $256^(4)$, bietet, so bietet IPv6 einen Adressbereich von $2^(128)$. IPv6 ist üblicherweise codiert in Hexdadezimalzahlen, wobei einzelne Blöcke mittels ':' getrennt werden.
+    Während IPv4 einen Adressbereich von $2^{32}$, oder $256^{4}$, bietet, 
+    so bietet IPv6 einen Adressbereich von $2^{128}$. 
+    IPv6 ist üblicherweise codiert in Hexdadezimalzahlen, wobei einzelne Blöcke mittels ':' getrennt werden.
     
         \begin{verbatim}
 https://213.213.220.07/                         -- IPv4
@@ -933,7 +1076,9 @@ http://[2001:0db8:85a3:08d3::0370:7344]:8080/   -- IPV6 + Port
             \item Klasse C: 24 Bit-Netz \& 8 Bit Host-Adresse
             \item Klasse D: 28 Bit-Multicastgruppen
     \end{enumerate}
-        Die zu vergebenden Hostadressen berechnet sich mit $2^(Anzahl an Bits für Hostadresse) - 2$. Dabei sind spezifische Adressen stets reserviert: 192.168.0.0/8 ist das Netzwerk selbst, während 192.168.0.255/32 ist der Broadcast innerhalb dieses Netzes.
+        Die zu vergebenden Hostadressen berechnet sich mit $2^{Anzahl an Bits für Hostadresse} - 2$. 
+        Dabei sind spezifische Adressen stets reserviert: 192.168.0.0/8 ist das Netzwerk selbst, 
+        während 192.168.0.255/32 ist der Broadcast innerhalb dieses Netzes.
         
         IPv4 -- Klasse C-Netzberechnung:\\
         Bei einem Subnetz von 11111111.11111111.11111111.00000000 (255.255.255.0) wird der Netzteil auf 192.168.0 festgelegt $\leftrightarrow$ E.g. wir besitzen 8 Bits für unsere Hostadressen.\\
@@ -1011,7 +1156,7 @@ http://[2001:0db8:85a3:08d3::0370:7344]:8080/   -- IPV6 + Port
         TDMA kann auf einem einzigen Kanal mehrere User unterhalten, jedoch auf Kosten der Qualität.
         Siehe auch: 
         \begin{verbatim}
-https://www.taitradioacademy.com/topic/the-difference-between-fdma-and-tdma-1/
+        https://www.taitradioacademy.com/topic/the-difference-between-fdma-and-tdma-1/
         \end{verbatim}
         
         \item Die Abkürzung 'AS' steht für ''automated Services'' und steht im Zusammenhang mit Routerregionen.\\
@@ -1036,7 +1181,7 @@ https://www.taitradioacademy.com/topic/the-difference-between-fdma-and-tdma-1/
         Richtig.
         
         \item Forwarding ist ein äquivalenter Ausdruck für Routing.\\
-        Nein. Forwarding beschreibt wohin ein Packet gesendet wird, während Routing die Route betrachtet welche das Packet vom Sender zu Empfänger hintergelegt hat.
+        Nein. Forwarding beschreibt wohin ein Packet gesendet wird, während Routing die Route betrachtet, welche das Packet vom Sender zu Empfänger hintergelegt hat.
         
         \item Das Hot Potatoe Routing nutzt Flooding zur Datenweitergabe.\\
         Falsch. Anhand iBGP wird bereits vornherein ermittelt, wer der nächst-günstigste Nachbar zum übertragen ist. Zu diesem wird dann gesendet.
@@ -1057,49 +1202,49 @@ https://www.taitradioacademy.com/topic/the-difference-between-fdma-and-tdma-1/
         Falsch, es gibt weitere Felder die geändert wurden.
         
         \begin{verbatim}
-    IPv4 Header-felder:
-    0                   1                   2                   3
-    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |Version|  IHL  |Type of Service|          Total Length         |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |         Identification        |Flags|      Fragment Offset    |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |  Time to Live |    Protocol   |         Header Checksum       |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                       Source Address                          |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                    Destination Address                        |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                    Options                    |    Padding    |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        IPv4 Header-felder:
+         0                   1                   2                   3
+         0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |Version|  IHL  |Type of Service|          Total Length         |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |         Identification        |Flags|      Fragment Offset    |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |  Time to Live |    Protocol   |         Header Checksum       |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |                       Source Address                          |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |                    Destination Address                        |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |                    Options                    |    Padding    |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         \end{verbatim}
         
         \begin{verbatim}
-    IPv6 Header-Felder:
-    0                   1                   2                   3
-    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |Version| Traffic Class |           Flow Label                  |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |         Payload Length        |  Next Header  |   Hop Limit   |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                                                               |
-   +                                                               +
-   |                                                               |
-   +                         Source Address                        +
-   |                                                               |
-   +                                                               +
-   |                                                               |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                                                               |
-   +                                                               +
-   |                                                               |
-   +                      Destination Address                      +
-   |                                                               |
-   +                                                               +
-   |                                                               |
-   +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        IPv6 Header-Felder:
+         0                   1                   2                   3
+         0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |Version| Traffic Class |           Flow Label                  |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |         Payload Length        |  Next Header  |   Hop Limit   |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |                                                               |
+        +                                                               +
+        |                                                               |
+        +                         Source Address                        +
+        |                                                               |
+        +                                                               +
+        |                                                               |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+        |                                                               |
+        +                                                               +
+        |                                                               |
+        +                      Destination Address                      +
+        |                                                               |
+        +                                                               +
+        |                                                               |
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         \end{verbatim}
         
         \item TCP implementiert Multicast.\\
