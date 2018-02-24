@@ -22,15 +22,27 @@ package networks;
 import networks.ClientHost;
 import networks.ServerHost;
 
+channel connection extends ned.DatarateChannel	// Hardwareconnection between devices
+{
+ 	delay = 5ms;
+ 	datarate = 10Mbps;   
+}
+
 network HTTPNetwork
 {
     parameters:
         // TODO add global parameters if needed
     
-    @display("bgb=305,203");
+    @display("bgb=400, 300");
     submodules:
-        // TODO add ClientHost and ServerHost
+	Client: ClientHost{
+	 	@display("p=100, 150"); 
+	}
+	Server: ServerHost{
+	 	@display("p=300, 150");   
+	}
         
     connections:
-        // TODO connect ClientHost and ServerHost 
+		Client.outNet-->connection-->Server.inNet;
+		Server.outNet-->connection-->Client.inNet;
 }

@@ -25,14 +25,16 @@ import networks.ServerHost;
 network HTTPNetwork
 {
     parameters:
-        // TODO add global parameters if needed
-    
-    @display("bgb=300,200");
+        @display("bgb=385,155");
     submodules:
-	Client: ClientHost;
-	Server: ServerHost;
-        
+        Client: ClientHost {
+            @display("p=75,77.5");
+        }
+        Server: ServerHost {
+
+            @display("p=310,77.5");
+        }
     connections:
-	Client.outNet-->{delay = 300ms; }-->Server.inNet;
-	Server.outNet-->{delay = 300ms; }-->Client.inNet;
+        Client.outNet --> {  delay = 300ms; } --> Server.inNet;
+        Server.outNet --> {  delay = 300ms; } --> Client.inNet;
 }

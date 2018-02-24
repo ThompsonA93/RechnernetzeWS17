@@ -2,6 +2,14 @@
 last-configname=HTTPNetwork
 last-runnumber=0
 
+[Inspector-0]
+classname=ClientHost
+fullscreen=false
+geom=@Rect(1417 360 327 386)
+id=@Variant(\0\0\0\x81\0\0\0\0\0\0\0\x2)
+object=HTTPNetwork.Client
+type=2
+
 [RunModeProfiles]
 fast-max-animation-speed=nan
 fast-max-fps=30

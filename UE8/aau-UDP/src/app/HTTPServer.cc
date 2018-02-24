@@ -50,6 +50,11 @@ void HTTPServer::handleMessage(cMessage *msg)
         if(request == "/test/") // FIXME Why the fuck even
         {
             HTTPServerMsg* rMsg = new HTTPServerMsg;
+            UDPControlInfo* uci = new UDPControlInfo;
+            uci->setSrcPort(srcPort);
+            uci->setDestPort(destPort);
+            rMsg->setControlInfo(uci);
+
             rMsg->setResponse(data[0].c_str());
             bubble("Sending index.html");
             send(rMsg, out);
@@ -57,6 +62,11 @@ void HTTPServer::handleMessage(cMessage *msg)
         else if(request == "/test/logo.gif")
         {
             HTTPServerMsg* rMsg = new HTTPServerMsg;
+            UDPControlInfo* uci = new UDPControlInfo;
+            uci->setSrcPort(srcPort);
+            uci->setDestPort(destPort);
+            rMsg->setControlInfo(uci);
+
             rMsg->setResponse(data[1].c_str());
             bubble("Sending .gif");
             send(rMsg, out);
@@ -64,6 +74,11 @@ void HTTPServer::handleMessage(cMessage *msg)
         else if(request == "/test/TechnikErleben.png")
         {
             HTTPServerMsg* rMsg = new HTTPServerMsg;
+            UDPControlInfo* uci = new UDPControlInfo;
+            uci->setSrcPort(srcPort);
+            uci->setDestPort(destPort);
+            rMsg->setControlInfo(uci);
+
             rMsg->setResponse(data[2].c_str());
             bubble("Sending .png");
             send(rMsg, out);
@@ -71,6 +86,10 @@ void HTTPServer::handleMessage(cMessage *msg)
         else{
             // Invalid request
             HTTPServerMsg* rMsg = new HTTPServerMsg;
+            UDPControlInfo* uci = new UDPControlInfo;
+            uci->setSrcPort(srcPort);
+            uci->setDestPort(destPort);
+            rMsg->setControlInfo(uci);
             rMsg->setResponse("Error 404");
             bubble("Error!");
             send(rMsg, out);

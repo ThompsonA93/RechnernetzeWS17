@@ -18,5 +18,6 @@
 // 621.800 (17W) Computer Networks and Network Programming
 
 packet HTTPClientMsg {
-    // TODO use from previous exercise
+	string request;
+	string method;
 }

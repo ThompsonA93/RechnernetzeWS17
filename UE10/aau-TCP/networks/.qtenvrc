@@ -2,6 +2,22 @@
 last-configname=HTTPNetwork
 last-runnumber=0
 
+[Inspector-0]
+classname=ClientHost
+fullscreen=false
+geom=@Rect(1366 360 327 386)
+id=@Variant(\0\0\0\x81\0\0\0\0\0\0\0\x2)
+object=HTTPNetwork.Client
+type=2
+
+[Inspector-1]
+classname=ServerHost
+fullscreen=false
+geom=@Rect(1417 287 401 448)
+id=@Variant(\0\0\0\x81\0\0\0\0\0\0\0\x3)
+object=HTTPNetwork.Server
+type=2
+
 [RunModeProfiles]
 fast-max-animation-speed=nan
 fast-max-fps=30
@@ -17,5 +33,5 @@ run-max-playback-speed=100
 run-min-animation-speed=nan
 run-min-fps=2
 run-min-playback-speed=0.01
-run-playback-speed=1
+run-playback-speed=1.3803842646028848
 run-target-cpu-usage=0.80000000000000004

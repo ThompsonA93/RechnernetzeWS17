@@ -179,7 +179,7 @@ void CSMA::handleLowerLayerMessage(cMessage *msg)
 void CSMA::handleMessageForMe(CSMAFrame *frame) {
     switch (frame->getType()) {
     case RTS: {
-        EV << "received RTS; waiting" << endl;
+        EV << "CSMA::received RTS; waiting" << endl;
 
         // TODO
 
@@ -191,7 +191,7 @@ void CSMA::handleMessageForMe(CSMAFrame *frame) {
         break;
     }
     case CTS: {
-        EV << "received CTS response; sending data to server" << endl;
+        EV << "CSMA::received CTS response; sending data to server" << endl;
 
         // TODO
 
@@ -208,7 +208,7 @@ void CSMA::handleMessageForMe(CSMAFrame *frame) {
         break;
     }
     case DATA: {
-        EV << "received data; sending ack" << endl;
+        EV << "CSMA::received data; sending ack" << endl;
         // TODO
 
         // send ack
@@ -222,7 +222,7 @@ void CSMA::handleMessageForMe(CSMAFrame *frame) {
         break;
     }
     case ACK: {
-        EV << "received ack; " << endl;
+        EV << "CSMA::received ack; " << endl;
 
         // TODO
 
@@ -258,7 +258,7 @@ void CSMA::handleMessageForOthers(CSMAFrame *frame)
 {
     switch (frame->getType()) {
         case RTS: {
-            // TODO
+            // TODO?
 
             // do nothing
             break;

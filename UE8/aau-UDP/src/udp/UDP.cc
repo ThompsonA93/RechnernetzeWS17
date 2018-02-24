@@ -23,13 +23,9 @@
 #include "UDPControlInfo_m.h"
 #include "../3rdParty/IPv4Address.h"
 #include "../3rdParty/IPv6Address.h"
-
 Define_Module(UDP);
 
-void UDP::initialize()
-{
-    // Empty
-}
+void UDP::initialize(){}
 
 void UDP::handleMessage(cMessage *msg)
 {
@@ -46,18 +42,31 @@ void UDP::handleMessage(cMessage *msg)
 
 void UDP::handleAppMessage(cPacket *msg)
 {
-	// TODO implement handleAppMessage
-    // 1. cast to http msg
-    // 2. remove controlinfo
-    // 3. create udp segment and use controlinfo to set UDP fields
-    // 4. encapsulate http msg and send to lower layer
+    // Message from application layer
+    // Strip UDP-Controlinfo
+    UDPControlInfo* uci = (UDPControlInfo*)msg->getControlInfo();
+
+    UDPSegment* us = new UDPSegment;
+    us->setSrcPort(uci->getSrcPort());
+    us->setDestPort(uci->getDestPort());
+
+    us->encapsulate(msg);
+
+    EV << "Sending to lower Layer" << std::endl;
+    send(us, "toLowerLayer");
 }
 
-void UDP::handleUDPSegment(cPacket *msg) {
-	// TODO implement handleUDPSegment
-    // 1. cast to udp segment
-    // 2. create controlinfo and use UDP fields to set values
-    // 3. decapsulate http msg
-    // 4. attach controlinfo and sent to upper layer
-}
+void UDP::handleUDPSegment(cPacket *msg)
+{
+    UDPSegment* us = check_and_cast<UDPSegment*>(msg);
+    cPacket* cp = msg->decapsulate();
 
+    UDPControlInfo* uci = new UDPControlInfo;
+    uci->setDestPort(us->getDestPort());
+    uci->setSrcPort(us->getSrcPort());
+
+    cp->setControlInfo(uci);
+
+    EV << "Sending to upper layer" << std::endl;
+    send(cp, "toUpperLayer");
+}

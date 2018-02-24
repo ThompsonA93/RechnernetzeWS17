@@ -17,8 +17,7 @@
 //
 // 621.800 (17W) Computer Networks and Network Programming
 
-packet TCPSegment
-{
+packet TCPSegment {
     int srcPort = -1;     // source port
     int destPort = -1;     // destination port 
     int seqNr = 0;		// sequence number 32 bit
@@ -33,5 +32,4 @@ packet TCPSegment
     int receiveWindow = 0;	// 16 bit receive window
     bool psh = false;	// PSH flag for indicting immediate passing on of information
     bool urg = false;	// URG flag for indicating 'urgent' segments (by app layer)
-
 }

@@ -20,19 +20,22 @@
 #ifndef TCP_H_
 #define TCP_H_
 
-#include <omnetpp.h>
-#include "TCPSegment_m.h"
-#include "TCPControlInfo_m.h"
+#include "../3rdParty/IPv4Address.h"
+#include "../3rdParty/IPv6Address.h"
+#include "../tcp/TCPSegment_m.h"
 
-class TCP : public cSimpleModule{
+using namespace omnetpp;
 
+class TCP : public cSimpleModule
+{
 protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage *msg);
-    virtual void handleAppMessage(cPacket *msg);
-    virtual void handleTCPSegment(cPacket *msg);
+	virtual void initialize();
+	virtual void handleMessage(cMessage *msg);
+	virtual void handleAppMessage(cPacket *msg);
+	virtual void handleTCPSegment(cPacket *msg);
 
+	//++++++++++++++++++++++++++++++++++
+	 void findPacket(TCPSegment* msg);
 };
-
 
 #endif /* TCP_H_ */
